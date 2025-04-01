@@ -36,13 +36,14 @@ const GameScreen = (): JSX.Element => {
     questionsLength,
   } = useQuestion();
 
+  const isCorrectAnswer =
+    !!currentQuestion.word.length &&
+    currentQuestion.word.split("").every((l) => lettersCorrect.includes(l) || l === " ");
+
   if (questionsLength === 0) return <h3>There're no questions in this category yet.</h3>;
 
   useEffect(() => {
-    if (
-      !!currentQuestion.word.length &&
-      currentQuestion.word.split("").every((l) => lettersCorrect.includes(l) || l === " ")
-    ) {
+    if (isCorrectAnswer) {
       setCorrect(true);
       correctSound.play();
     }
@@ -53,7 +54,7 @@ const GameScreen = (): JSX.Element => {
       failureSound.play();
     }
 
-    if (questions.length === MAXIMUM_QUESTIONS) {
+    if (questions.length === MAXIMUM_QUESTIONS - 1 && isCorrectAnswer) {
       resetGame();
       correctSound.play();
       setScreen("over");
@@ -93,7 +94,7 @@ const GameScreen = (): JSX.Element => {
         <div>
           {LETTERS.map((string) => {
             return (
-              <KeyboardGrid>
+              <KeyboardGrid key={string}>
                 {string.split("").map((el) => {
                   return (
                     <KeyButton

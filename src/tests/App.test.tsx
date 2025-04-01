@@ -5,6 +5,6 @@ import App from "../App";
 describe("App", () => {
   it("App renders", () => {
     render(<App />);
-    expect(screen.getByText("Hangman")).toBeDefined();
+    expect(screen.getByText("New game")).toBeDefined();
   });
 });
