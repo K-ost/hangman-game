@@ -7,6 +7,13 @@ import ProgressBar from "../ui/ProgressBar";
 import useQuestion from "../hooks/useQuestion";
 import { KeyboardGrid } from "../components/Keyboard";
 import Correct from "../components/Correct";
+import clickAudio from "../assets/sounds/click.mp3";
+import correctAudio from "../assets/sounds/correct.mp3";
+import failureAudio from "../assets/sounds/failure.mp3";
+
+const clickSound = new Audio(clickAudio);
+const correctSound = new Audio(correctAudio);
+const failureSound = new Audio(failureAudio);
 
 const GameScreen = (): JSX.Element => {
   const {
@@ -37,11 +44,13 @@ const GameScreen = (): JSX.Element => {
       currentQuestion.word.split("").every((l) => lettersCorrect.includes(l) || l === " ")
     ) {
       setCorrect(true);
+      correctSound.play();
     }
 
     if (lettersWrong.length >= ATTEMPTS_NUMBER) {
       resetGame();
       setScreen("over");
+      failureSound.play();
     }
 
     if (questions.length === MAXIMUM_QUESTIONS) {
@@ -52,6 +61,7 @@ const GameScreen = (): JSX.Element => {
 
   const keyHandler = (char: string) => {
     if (currentQuestion) {
+      clickSound.play();
       setLetter(char, currentQuestion.word.includes(char) ? "correct" : "wrong");
     }
   };
