@@ -1,6 +1,6 @@
 {
   "name": "hangman",
-  "homepage": "https://K-ost.github.io/hangman-game",
+  "homepage": "https://k-ost.github.io/hangman-game/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
