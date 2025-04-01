@@ -6,7 +6,7 @@ const MainScreen = (): JSX.Element => {
   const setScreen = useAppStore((state) => state.setScreen);
 
   return (
-    <div>
+    <div className="app-center">
       <Button onClick={() => setScreen("categories")}>New game</Button>
     </div>
   );

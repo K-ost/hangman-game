@@ -25,7 +25,7 @@ const Wrapper = styled.div`
     transform: translate(-50%, -50%);
     width: 70px;
     @media screen and (max-width: 750px) {
-      width: 34px;
+      width: 30px;
     }
   }
 `;
@@ -42,10 +42,10 @@ const Button = styled.button<{ $pressed: PressedType }>`
   text-transform: uppercase;
   @media screen and (max-width: 750px) {
     border-radius: 8px;
-    width: ${BTN_WIDTH - 34}px;
-    height: ${BTN_HEIGHT - 34}px;
-    font-size: 20px;
-    line-height: 24px;
+    width: 30px;
+    height: 28px;
+    font-size: 16px;
+    line-height: 20px;
   }
 `;
 

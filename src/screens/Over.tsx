@@ -6,9 +6,11 @@ const OverScreen = (): JSX.Element => {
   const { setScreen } = useAppStore();
 
   return (
-    <div>
-      <h1>GAME OVER</h1>
-      <Button onClick={() => setScreen("categories")}>NEW GAME</Button>
+    <div className="app-center">
+      <div>
+        <h1>GAME OVER</h1>
+        <Button onClick={() => setScreen("categories")}>New game</Button>
+      </div>
     </div>
   );
 };

@@ -9,10 +9,16 @@ type ButtonProps = ComponentPropsWithRef<"button"> & {
 
 const Btn = styled.button<{ $variant?: BtnVariant }>`
   background: var(--color-white);
-  border-radius: 24px;
+  border-radius: 18px;
   font-size: 32px;
   line-height: 40px;
   padding: 20px 34px;
+  @media screen and (max-width: 750px) {
+    border-radius: 12px;
+    font-size: 20px;
+    line-height: 26px;
+    padding: 12px 18px;
+  }
 `;
 
 const Button = (props: ButtonProps): JSX.Element => {

@@ -64,32 +64,38 @@ const GameScreen = (): JSX.Element => {
   };
 
   return (
-    <div>
+    <div className="fullWidth">
       <h2>Category: {pickedCategory}</h2>
 
       <p className="text-center">
         Question: {questions.length + 1} / {MAXIMUM_QUESTIONS}
       </p>
 
-      <h3>
-        {currentQuestion.hint} - {currentQuestion.word}
-      </h3>
+      {currentQuestion.hint && <h3>{currentQuestion.hint}</h3>}
 
       <Word word={currentQuestion.word} />
 
       <ProgressBar />
 
       {!correct && (
-        <KeyboardGrid>
-          {LETTERS.split("").map((el) => (
-            <KeyButton
-              key={el}
-              letter={el}
-              pressFn={() => keyHandler(el)}
-              word={currentQuestion.word}
-            />
-          ))}
-        </KeyboardGrid>
+        <div>
+          {LETTERS.map((string) => {
+            return (
+              <KeyboardGrid>
+                {string.split("").map((el) => {
+                  return (
+                    <KeyButton
+                      key={el}
+                      letter={el}
+                      pressFn={() => keyHandler(el)}
+                      word={currentQuestion.word}
+                    />
+                  );
+                })}
+              </KeyboardGrid>
+            );
+          })}
+        </div>
       )}
 
       {correct && <Correct handler={goNextHandler} />}

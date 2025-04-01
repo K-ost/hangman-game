@@ -8,6 +8,10 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 24px;
+  @media screen and (max-width: 750px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
 `;
 
 const CategoriesScreen = (): JSX.Element => {
@@ -19,7 +23,7 @@ const CategoriesScreen = (): JSX.Element => {
   };
 
   return (
-    <div>
+    <div className="fullWidth">
       <h1>Pick the category</h1>
       <Grid>
         {data.map((category) => (

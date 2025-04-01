@@ -8,6 +8,7 @@ type WordProps = {
 
 const Row = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 40px 0;
 `;
@@ -15,16 +16,16 @@ const Letter = styled.div<{ $opened: boolean }>`
   align-items: center;
   background: var(--color-blue);
   border: 1px solid var(--color-white);
-  border-radius: 24px;
+  border-radius: 18px;
   display: flex;
-  font-size: 58px;
-  height: 120px;
+  font-size: 52px;
+  height: 110px;
   justify-content: center;
-  line-height: 40px;
-  margin: 0 4px;
+  line-height: 60px;
+  margin: 0 4px 12px;
   opacity: ${(props) => (props.$opened ? 1 : 0.25)};
   text-transform: uppercase;
-  width: 90px;
+  width: 80px;
   span {
     display: ${(props) => (props.$opened ? "block" : "none")};
   }

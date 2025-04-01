@@ -10,7 +10,7 @@ type CatButtonProps = {
 
 const Button = styled.button`
   background: var(--color-white);
-  border-radius: 24px;
+  border-radius: 18px;
   color: var(--color-dark);
   display: flex;
   flex-direction: column;
@@ -26,6 +26,14 @@ const Button = styled.button`
     object-fit: contain;
     width: 50px;
     margin: 0 auto;
+  }
+  @media screen and (max-width: 750px) {
+    border-radius: 12px;
+    font-size: 16px;
+    img {
+      width: 34px;
+      height: 40px;
+    }
   }
 `;
 

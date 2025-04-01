@@ -2,7 +2,7 @@ export type Screen = "main" | "categories" | "game" | "over" | "score";
 
 export type Question = {
   word: string;
-  hint: string;
+  hint?: string;
 };
 
 export type Category = {
