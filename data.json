@@ -1,0 +1,261 @@
+[
+  {
+    "id": 1,
+    "category": "Animals",
+    "image": "./assets/animal.svg",
+    "questions": [
+      { "word": "dog", "hint": "A common pet." },
+      { "word": "cat", "hint": "A small furry pet with whiskers." },
+      { "word": "elephant", "hint": "A large gray animal with a trunk." },
+      { "word": "fish", "hint": "Lives in water and swims." },
+      { "word": "bird", "hint": "Has wings and can fly." },
+      { "word": "rabbit", "hint": "A small animal with long ears, hops around." },
+      { "word": "lion", "hint": "The king of the jungle." },
+      { "word": "tiger", "hint": "A large striped cat." },
+      { "word": "cow", "hint": "Produces milk." },
+      { "word": "horse", "hint": "A large animal often used for riding." },
+      { "word": "giraffe", "hint": "A very tall animal with a long neck." },
+      { "word": "monkey", "hint": "An animal that likes to climb trees." },
+      { "word": "zebra", "hint": "An animal with black and white stripes." },
+      { "word": "snake", "hint": "A reptile that slithers on the ground." },
+      { "word": "panda", "hint": "A black and white bear from China." }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Fruits",
+    "image": "./assets/fruit.svg",
+    "questions": [
+      { "word": "apple", "hint": "A red or green fruit." },
+      { "word": "banana", "hint": "A yellow fruit that monkeys like." },
+      { "word": "grape", "hint": "A small round fruit that grows in bunches." },
+      { "word": "pear", "hint": "A fruit with a round bottom and narrow top." },
+      { "word": "orange", "hint": "A citrus fruit that is usually orange." },
+      { "word": "strawberry", "hint": "A red fruit with small seeds on the outside." },
+      { "word": "pineapple", "hint": "A tropical fruit with spiky leaves." },
+      { "word": "peach", "hint": "A soft fruit with a fuzzy skin." },
+      { "word": "watermelon", "hint": "A large, green fruit with red inside." },
+      { "word": "cherry", "hint": "A small red fruit often found in pairs." },
+      { "word": "kiwi", "hint": "A small brown fruit with green flesh inside." },
+      { "word": "mango", "hint": "A sweet tropical fruit with a large pit." },
+      { "word": "plum", "hint": "A small round fruit that is often purple or red." },
+      { "word": "apricot", "hint": "A small fruit that is orange and soft." },
+      { "word": "papaya", "hint": "A tropical fruit with orange flesh." }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Colors",
+    "image": "./assets/color.svg",
+    "questions": [
+      { "word": "red", "hint": "The color of an apple." },
+      { "word": "blue", "hint": "The color of the sky." },
+      { "word": "yellow", "hint": "The color of the sun." },
+      { "word": "green", "hint": "The color of grass." },
+      { "word": "pink", "hint": "A color often seen in flowers like roses." },
+      { "word": "orange", "hint": "A color that comes from mixing red and yellow." },
+      { "word": "purple", "hint": "A color between red and blue." },
+      { "word": "brown", "hint": "The color of chocolate or tree bark." },
+      { "word": "black", "hint": "The color of the night sky." },
+      { "word": "white", "hint": "The color of snow." },
+      { "word": "gray", "hint": "The color of a cloudy day." },
+      { "word": "cyan", "hint": "A color similar to light blue." },
+      { "word": "beige", "hint": "A pale, light brown color." },
+      { "word": "turquoise", "hint": "A blue-green color often seen in oceans." },
+      { "word": "teal", "hint": "A color between blue and green." }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Objects",
+    "image": "./assets/chair.svg",
+    "questions": [
+      { "word": "book", "hint": "Something you read." },
+      { "word": "ball", "hint": "A round object used in many games." },
+      { "word": "table", "hint": "A flat surface used for eating or working." },
+      { "word": "pencil", "hint": "An object used to write." },
+      { "word": "chair", "hint": "An object used for sitting." },
+      { "word": "cup", "hint": "An object used for drinking." },
+      { "word": "watch", "hint": "An object used to tell time." },
+      { "word": "phone", "hint": "A device used to make calls." },
+      { "word": "key", "hint": "A small object used to open locks." },
+      {
+        "word": "glove",
+        "hint": "An object worn on your hand for warmth or protection."
+      },
+      { "word": "hat", "hint": "An object worn on your head." },
+      { "word": "backpack", "hint": "A bag worn on your back to carry things." },
+      { "word": "bottle", "hint": "A container used to hold liquids." },
+      { "word": "scissors", "hint": "An object used to cut things." },
+      { "word": "umbrella", "hint": "An object used to protect you from rain." }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Vehicles",
+    "image": "./assets/car.svg",
+    "questions": [
+      { "word": "car", "hint": "A vehicle that drives on the road." },
+      { "word": "bus", "hint": "A large vehicle that carries many passengers." },
+      { "word": "bike", "hint": "A two-wheeled vehicle you pedal." },
+      { "word": "boat", "hint": "A vehicle that travels on water." },
+      { "word": "plane", "hint": "A vehicle that flies in the sky." },
+      { "word": "truck", "hint": "A large vehicle used to carry goods." },
+      { "word": "train", "hint": "A vehicle that travels on tracks." },
+      { "word": "scooter", "hint": "A small two-wheeled vehicle often used for fun." },
+      { "word": "helicopter", "hint": "A flying vehicle with rotating blades." },
+      { "word": "submarine", "hint": "A vehicle that travels underwater." },
+      { "word": "motorcycle", "hint": "A two-wheeled vehicle that you ride." },
+      {
+        "word": "wagon",
+        "hint": "A small vehicle with wheels often pulled by a horse."
+      },
+      {
+        "word": "hot air balloon",
+        "hint": "A large balloon that can carry people through the air."
+      },
+      {
+        "word": "tram",
+        "hint": "A vehicle that runs on tracks and is used for public transport."
+      },
+      { "word": "skateboard", "hint": "A board with wheels you ride on the ground." }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Nature",
+    "image": "./assets/tree.svg",
+    "questions": [
+      { "word": "tree", "hint": "A tall plant with branches and leaves." },
+      { "word": "mountain", "hint": "A large, tall landform." },
+      { "word": "river", "hint": "A large flowing body of water." },
+      { "word": "flower", "hint": "A colorful plant that blooms." },
+      { "word": "cloud", "hint": "A mass of water vapor in the sky." },
+      { "word": "desert", "hint": "A hot, dry area with little water." },
+      {
+        "word": "ocean",
+        "hint": "A vast body of saltwater covering most of the Earth."
+      },
+      { "word": "rain", "hint": "Water droplets that fall from the sky." },
+      { "word": "snow", "hint": "Frozen water that falls as flakes." },
+      { "word": "sand", "hint": "Small grains found on beaches." },
+      { "word": "volcano", "hint": "A mountain that erupts with lava." },
+      { "word": "cave", "hint": "A natural underground space." },
+      { "word": "forest", "hint": "A large area of trees and plants." },
+      { "word": "island", "hint": "A piece of land surrounded by water." },
+      { "word": "grass", "hint": "Small green plants that cover the ground." }
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Sports",
+    "image": "./assets/basketball.svg",
+    "questions": [
+      { "word": "soccer", "hint": "A game played with a ball and goals." },
+      { "word": "basketball", "hint": "A game where you shoot a ball into a hoop." },
+      { "word": "tennis", "hint": "A game played with rackets and a ball." },
+      { "word": "baseball", "hint": "A game played with a bat and a ball." },
+      {
+        "word": "football",
+        "hint": "A game where players try to score by carrying or kicking a ball."
+      },
+      { "word": "swimming", "hint": "A sport where you move in water." },
+      { "word": "gymnastics", "hint": "A sport involving exercises and acrobatics." },
+      { "word": "volleyball", "hint": "A game where two teams hit a ball over a net." },
+      {
+        "word": "cricket",
+        "hint": "A game played with a bat and ball, mostly popular in England."
+      },
+      { "word": "hockey", "hint": "A game played on ice with a puck and sticks." },
+      {
+        "word": "rugby",
+        "hint": "A contact sport where players try to carry the ball over a goal line."
+      },
+      { "word": "skating", "hint": "A sport where you glide on ice or pavement." },
+      {
+        "word": "ping pong",
+        "hint": "A game played with paddles and a small ball on a table."
+      },
+      { "word": "boxing", "hint": "A sport where two people fight with fists." },
+      { "word": "archery", "hint": "A sport where you shoot arrows at a target." }
+    ]
+  },
+  {
+    "id": 8,
+    "category": "Jobs",
+    "image": "./assets/engineer.svg",
+    "questions": [
+      { "word": "teacher", "hint": "A person who educates students." },
+      { "word": "doctor", "hint": "A person who helps people when they are sick." },
+      {
+        "word": "nurse",
+        "hint": "A person who assists doctors in taking care of patients."
+      },
+      { "word": "chef", "hint": "A person who cooks food professionally." },
+      { "word": "farmer", "hint": "A person who grows crops or raises animals." },
+      { "word": "engineer", "hint": "A person who designs and builds things." },
+      {
+        "word": "police",
+        "hint": "A person who keeps people safe by enforcing the law."
+      },
+      { "word": "firefighter", "hint": "A person who puts out fires." },
+      { "word": "musician", "hint": "A person who plays an instrument or sings." },
+      { "word": "actor", "hint": "A person who performs in movies or plays." },
+      { "word": "artist", "hint": "A person who creates art." },
+      { "word": "pilot", "hint": "A person who flies airplanes." },
+      { "word": "dentist", "hint": "A person who takes care of teeth." },
+      { "word": "scientist", "hint": "A person who studies and works with science." },
+      { "word": "lawyer", "hint": "A person who represents clients in legal matters." }
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Buildings",
+    "image": "./assets/house.svg",
+    "questions": [
+      { "word": "house", "hint": "A building where people live." },
+      { "word": "school", "hint": "A building where students learn." },
+      { "word": "church", "hint": "A building for religious worship." },
+      { "word": "library", "hint": "A place where books are stored." },
+      { "word": "hospital", "hint": "A building where people receive medical care." },
+      { "word": "store", "hint": "A place where goods are sold." },
+      { "word": "office", "hint": "A building where people work." },
+      { "word": "apartment", "hint": "A living space in a large building." },
+      { "word": "factory", "hint": "A building where things are made." },
+      { "word": "stadium", "hint": "A large building for sporting events." },
+      { "word": "hotel", "hint": "A place where people stay temporarily." },
+      { "word": "post office", "hint": "A place where you send and receive mail." },
+      { "word": "restaurant", "hint": "A place where you can buy and eat food." },
+      { "word": "bakery", "hint": "A place where bread and cakes are made." },
+      { "word": "museum", "hint": "A place where historical items are displayed." }
+    ]
+  },
+  {
+    "id": 10,
+    "category": "Countries",
+    "image": "./assets/flag.svg",
+    "questions": [
+      { "word": "united states", "hint": "Country in North America" },
+      { "word": "canada", "hint": "Country in North America" },
+      { "word": "mexico", "hint": "Country in North America" },
+      { "word": "argentina", "hint": "Country in South America" },
+      { "word": "brazil", "hint": "Country in South America" },
+      { "word": "chile", "hint": "Country in South America" },
+      { "word": "norway", "hint": "Country in Europe" },
+      { "word": "sweden", "hint": "Country in Europe" },
+      { "word": "denmark", "hint": "Country in Europe" },
+      { "word": "australia", "hint": "Country and Continent" },
+      { "word": "austria", "hint": "Country in Europe" },
+      { "word": "belgium", "hint": "Country in Europe" },
+      { "word": "france", "hint": "Country in Europe" },
+      { "word": "italy", "hint": "Country in Europe" },
+      { "word": "germany", "hint": "Country in Europe" },
+      { "word": "spain", "hint": "Country in Europe" },
+      { "word": "portugal", "hint": "Country in Europe" },
+      { "word": "egypt", "hint": "Country in Africa" },
+      { "word": "china", "hint": "Country in Asia" },
+      { "word": "japan", "hint": "Country in Asia" },
+      { "word": "south korea", "hint": "Country in Asia" }
+    ]
+  }
+]
