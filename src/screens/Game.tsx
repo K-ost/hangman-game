@@ -21,7 +21,15 @@ const GameScreen = (): JSX.Element => {
     questions,
   } = useAppStore();
 
-  const { correct, question: currentQuestion, setCorrect, setUpdate } = useQuestion();
+  const {
+    correct,
+    question: currentQuestion,
+    setCorrect,
+    setUpdate,
+    questionsLength,
+  } = useQuestion();
+
+  if (questionsLength === 0) return <h3>There're no questions in this category yet.</h3>;
 
   useEffect(() => {
     if (

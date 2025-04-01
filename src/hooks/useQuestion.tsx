@@ -9,6 +9,7 @@ type useQuestionReturn = {
   correct: boolean;
   setCorrect: React.Dispatch<React.SetStateAction<boolean>>;
   setUpdate: React.Dispatch<React.SetStateAction<boolean>>;
+  questionsLength: number;
 };
 
 const useQuestion = (): useQuestionReturn => {
@@ -32,6 +33,7 @@ const useQuestion = (): useQuestionReturn => {
     correct,
     setCorrect,
     setUpdate,
+    questionsLength: catQuestions.length,
   };
 };
 
