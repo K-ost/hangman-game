@@ -3,6 +3,7 @@ import data from "../../data.json";
 import CatButton from "../ui/CatButton";
 import { useAppStore } from "../store/useAppStore";
 import styled from "styled-components";
+import { clickSound } from "../constants";
 
 const Grid = styled.div`
   display: grid;
@@ -20,6 +21,7 @@ const CategoriesScreen = (): JSX.Element => {
   const catPicker = (cat: string) => {
     setCategory(cat);
     setScreen("game");
+    clickSound.play();
   };
 
   return (

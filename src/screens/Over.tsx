@@ -1,15 +1,12 @@
 import { JSX } from "react";
-import Button from "../ui/Button";
-import { useAppStore } from "../store/useAppStore";
+import NewGameBtn from "../components/NewGameBtn";
 
 const OverScreen = (): JSX.Element => {
-  const { setScreen } = useAppStore();
-
   return (
     <div className="app-center">
       <div>
         <h1>GAME OVER</h1>
-        <Button onClick={() => setScreen("categories")}>New game</Button>
+        <NewGameBtn />
       </div>
     </div>
   );

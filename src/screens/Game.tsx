@@ -1,19 +1,19 @@
 import { JSX, useEffect } from "react";
 import { useAppStore } from "../store/useAppStore";
-import { ATTEMPTS_NUMBER, LETTERS, MAXIMUM_QUESTIONS } from "../constants";
+import {
+  ATTEMPTS_NUMBER,
+  clickSound,
+  correctSound,
+  failureSound,
+  LETTERS,
+  MAXIMUM_QUESTIONS,
+} from "../constants";
 import Word from "../ui/Word";
 import KeyButton from "../ui/KeyButton";
 import ProgressBar from "../ui/ProgressBar";
 import useQuestion from "../hooks/useQuestion";
 import { KeyboardGrid } from "../components/Keyboard";
 import Correct from "../components/Correct";
-import clickAudio from "../assets/sounds/click.mp3";
-import correctAudio from "../assets/sounds/correct.mp3";
-import failureAudio from "../assets/sounds/failure.mp3";
-
-const clickSound = new Audio(clickAudio);
-const correctSound = new Audio(correctAudio);
-const failureSound = new Audio(failureAudio);
 
 const GameScreen = (): JSX.Element => {
   const {
@@ -55,6 +55,7 @@ const GameScreen = (): JSX.Element => {
 
     if (questions.length === MAXIMUM_QUESTIONS) {
       resetGame();
+      correctSound.play();
       setScreen("over");
     }
   }, [lettersCorrect, lettersWrong, currentQuestion]);
@@ -71,6 +72,7 @@ const GameScreen = (): JSX.Element => {
     setUpdate(true);
     resetWord();
     setQuestions(currentQuestion.word);
+    clickSound.play();
   };
 
   return (
