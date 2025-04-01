@@ -37,6 +37,12 @@ const Letter = styled.div<{ $opened: boolean }>`
     width: 36px;
   }
 `;
+const Space = styled.div`
+  width: 48px;
+  @media screen and (max-width: 750px) {
+    width: 20px;
+  }
+`;
 
 const Word = (props: WordProps): JSX.Element => {
   const { word } = props;
@@ -44,11 +50,16 @@ const Word = (props: WordProps): JSX.Element => {
 
   return (
     <Row>
-      {word.split("").map((letter, index) => (
-        <Letter key={index} $opened={lettersCorrect.includes(letter)}>
-          <span>{letter}</span>
-        </Letter>
-      ))}
+      {word.split("").map((letter, index) => {
+        if (letter === " ") {
+          return <Space key={index} />;
+        }
+        return (
+          <Letter key={index} $opened={lettersCorrect.includes(letter)}>
+            <span>{letter}</span>
+          </Letter>
+        );
+      })}
     </Row>
   );
 };

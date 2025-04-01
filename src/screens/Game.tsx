@@ -26,7 +26,7 @@ const GameScreen = (): JSX.Element => {
   useEffect(() => {
     if (
       !!currentQuestion.word.length &&
-      currentQuestion.word.split("").every((l) => lettersCorrect.includes(l))
+      currentQuestion.word.split("").every((l) => lettersCorrect.includes(l) || l === " ")
     ) {
       setCorrect(true);
     }
@@ -58,6 +58,10 @@ const GameScreen = (): JSX.Element => {
   return (
     <div>
       <h2>Category: {pickedCategory}</h2>
+
+      <p className="text-center">
+        Question: {questions.length + 1} / {MAXIMUM_QUESTIONS}
+      </p>
 
       <h3>
         {currentQuestion.hint} - {currentQuestion.word}
