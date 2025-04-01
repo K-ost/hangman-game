@@ -20,6 +20,7 @@ const Title = styled.div`
   font-weight: 500;
   letter-spacing: 3px;
   margin: 0;
+  text-transform: uppercase;
   @media screen and (max-width: 750px) {
     font-size: 20px;
     letter-spacing: 1px;
@@ -48,7 +49,7 @@ const Header = (): JSX.Element => {
 
   return (
     <Head>
-      <Title>HANGMAN</Title>
+      <Title>Hangman</Title>
       <Score>
         Score: <div>{score}</div>
       </Score>
