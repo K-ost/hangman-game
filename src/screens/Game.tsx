@@ -2,7 +2,6 @@ import { JSX, useEffect } from "react";
 import { useAppStore } from "../store/useAppStore";
 import {
   ATTEMPTS_NUMBER,
-  clickSound,
   correctSound,
   failureSound,
   LETTERS,
@@ -63,7 +62,6 @@ const GameScreen = (): JSX.Element => {
 
   const keyHandler = (char: string) => {
     if (currentQuestion) {
-      clickSound.play();
       setLetter(char, currentQuestion.word.includes(char) ? "correct" : "wrong");
     }
   };
@@ -73,7 +71,6 @@ const GameScreen = (): JSX.Element => {
     setUpdate(true);
     resetWord();
     setQuestions(currentQuestion.word);
-    clickSound.play();
   };
 
   return (

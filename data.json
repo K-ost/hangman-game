@@ -2,7 +2,7 @@
   {
     "id": 1,
     "category": "Animals",
-    "image": "../public/assets/assets/animal.svg",
+    "image": "./assets/animal.svg",
     "questions": [
       { "word": "dog", "hint": "A common pet." },
       { "word": "cat", "hint": "A small furry pet with whiskers." },
@@ -24,7 +24,7 @@
   {
     "id": 2,
     "category": "Fruits",
-    "image": "../public/assets/assets/fruit.svg",
+    "image": "./assets/fruit.svg",
     "questions": [
       { "word": "apple", "hint": "A red or green fruit." },
       { "word": "banana", "hint": "A yellow fruit that monkeys like." },
@@ -46,7 +46,7 @@
   {
     "id": 3,
     "category": "Colors",
-    "image": "../public/assets/assets/color.svg",
+    "image": "./assets/color.svg",
     "questions": [
       { "word": "red", "hint": "The color of an apple." },
       { "word": "blue", "hint": "The color of the sky." },
@@ -68,7 +68,7 @@
   {
     "id": 4,
     "category": "Objects",
-    "image": "../public/assets/assets/chair.svg",
+    "image": "./assets/chair.svg",
     "questions": [
       { "word": "book", "hint": "Something you read." },
       { "word": "ball", "hint": "A round object used in many games." },
@@ -93,7 +93,7 @@
   {
     "id": 5,
     "category": "Vehicles",
-    "image": "../public/assets/assets/car.svg",
+    "image": "./assets/car.svg",
     "questions": [
       { "word": "car", "hint": "A vehicle that drives on the road." },
       { "word": "bus", "hint": "A large vehicle that carries many passengers." },
@@ -124,7 +124,7 @@
   {
     "id": 6,
     "category": "Nature",
-    "image": "../public/assets/assets/tree.svg",
+    "image": "./assets/tree.svg",
     "questions": [
       { "word": "tree", "hint": "A tall plant with branches and leaves." },
       { "word": "mountain", "hint": "A large, tall landform." },
@@ -149,7 +149,7 @@
   {
     "id": 7,
     "category": "Sports",
-    "image": "../public/assets/assets/basketball.svg",
+    "image": "./assets/basketball.svg",
     "questions": [
       { "word": "soccer", "hint": "A game played with a ball and goals." },
       { "word": "basketball", "hint": "A game where you shoot a ball into a hoop." },
@@ -183,7 +183,7 @@
   {
     "id": 8,
     "category": "Jobs",
-    "image": "../public/assets/assets/engineer.svg",
+    "image": "./assets/engineer.svg",
     "questions": [
       { "word": "teacher", "hint": "A person who educates students." },
       { "word": "doctor", "hint": "A person who helps people when they are sick." },
@@ -211,7 +211,7 @@
   {
     "id": 9,
     "category": "Buildings",
-    "image": "../public/assets/assets/house.svg",
+    "image": "./assets/house.svg",
     "questions": [
       { "word": "house", "hint": "A building where people live." },
       { "word": "school", "hint": "A building where students learn." },
@@ -233,7 +233,7 @@
   {
     "id": 10,
     "category": "Countries",
-    "image": "../public/assets/assets/flag.svg",
+    "image": "./assets/flag.svg",
     "questions": [
       { "word": "united states", "hint": "Country in North America" },
       { "word": "canada", "hint": "Country in North America" },
