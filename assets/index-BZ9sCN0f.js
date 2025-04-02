@@ -74,7 +74,7 @@ Error generating stack: `+l.message+`
   max-width: 300px;
   padding: 10px;
   text-align: center;
-  jusitify-content: center;
+  justify-content: center;
   &:hover {
     transform: scale(1.05);
   }
