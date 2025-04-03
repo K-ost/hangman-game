@@ -14,7 +14,6 @@ import ProgressBar from "../ui/ProgressBar";
 import useQuestion from "../hooks/useQuestion";
 import { KeyboardGrid } from "../components/Keyboard";
 import Correct from "../components/Correct";
-import { LetterType } from "../types";
 
 const GameScreen = (): JSX.Element => {
   const {
@@ -46,7 +45,6 @@ const GameScreen = (): JSX.Element => {
   useEffect(() => {
     if (isCorrectAnswer) {
       setCorrect(true);
-      correctSound.play();
     }
 
     if (lettersWrong.length >= ATTEMPTS_NUMBER) {
@@ -88,11 +86,7 @@ const GameScreen = (): JSX.Element => {
         Question: {questions.length + 1} / {MAXIMUM_QUESTIONS}
       </p>
 
-      {currentQuestion.hint && (
-        <h3>
-          {currentQuestion.hint} - {currentQuestion.word}
-        </h3>
-      )}
+      {currentQuestion.hint && <h3>{currentQuestion.hint}</h3>}
 
       <Word word={currentQuestion.word} />
 
