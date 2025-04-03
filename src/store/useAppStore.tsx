@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { Screen } from "../types";
+import { LetterType, Screen } from "../types";
 import { SCORE_POINT } from "../constants";
 
 type AppState = {
@@ -13,10 +13,11 @@ type AppState = {
 
   setScreen: (data: Screen) => void;
   setCategory: (data: string) => void;
-  setLetter: (letter: string, type: "correct" | "wrong") => void;
+  setLetter: (letter: string, type: LetterType) => void;
   setQuestions: (word: string) => void;
   resetWord: () => void;
   resetGame: () => void;
+  resetScore: () => void;
 };
 
 export const useAppStore = create<AppState>()(
@@ -40,12 +41,17 @@ export const useAppStore = create<AppState>()(
             score: state.score + SCORE_POINT,
           };
         }
+        if (type === "vowel") {
+          return {};
+        }
         return { lettersWrong: [...state.lettersWrong, letter] };
       }),
 
     setQuestions: (word) => set((state) => ({ questions: [...state.questions, word] })),
 
     resetWord: () => set(() => ({ lettersCorrect: [], lettersWrong: [] })),
+
+    resetScore: () => set(() => ({ score: 0 })),
 
     resetGame: () =>
       set(() => ({

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useAppStore } from "../store/useAppStore";
 import ok from "../assets/check.svg";
 import times from "../assets/times.svg";
+import { VOWELS } from "../constants";
 
 type KeyButtonProps = {
   letter: string;
@@ -30,8 +31,8 @@ const Wrapper = styled.div`
   }
 `;
 
-const Button = styled.button<{ $pressed: PressedType }>`
-  background: var(--color-white);
+const Button = styled.button<{ $pressed: PressedType; $vowel: boolean }>`
+  background: var(--color-${(props) => (props.$vowel ? "lightgreen" : "white")});
   border-radius: 24px;
   color: var(--color-dark);
   width: ${BTN_WIDTH}px;
@@ -53,6 +54,7 @@ const KeyButton = (props: KeyButtonProps): JSX.Element => {
   const { letter, pressFn } = props;
   const [pressed, setPressed] = useState(false);
   const { lettersCorrect } = useAppStore();
+  const isVowel = VOWELS.includes(letter);
 
   const keyHandler = () => {
     pressFn();
@@ -71,11 +73,14 @@ const KeyButton = (props: KeyButtonProps): JSX.Element => {
               : "incorrect"
             : "default"
         }
+        $vowel={isVowel}
       >
         {letter}
       </Button>
       {pressed && lettersCorrect.includes(letter) && <img src={ok} alt="" />}
-      {pressed && !lettersCorrect.includes(letter) && <img src={times} alt="" />}
+      {pressed && !lettersCorrect.includes(letter) && !isVowel && (
+        <img src={times} alt="" />
+      )}
     </Wrapper>
   );
 };

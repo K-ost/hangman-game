@@ -10,6 +10,7 @@ type ButtonProps = ComponentPropsWithRef<"button"> & {
 const Btn = styled.button<{ $variant?: BtnVariant }>`
   background: var(--color-white);
   border-radius: 18px;
+  color: var(--color-dark);
   font-size: 32px;
   line-height: 40px;
   padding: 20px 34px;

@@ -17,6 +17,9 @@ const Button = styled.button`
   font-size: 24px;
   max-width: 300px;
   padding: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   &:hover {
     transform: scale(1.05);
   }

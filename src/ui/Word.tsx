@@ -12,6 +12,17 @@ const Row = styled.div`
   justify-content: center;
   margin: 40px 0;
 `;
+const WordLine = styled.div`
+  display: flex;
+  margin: 0 48px 12px 0;
+  &:last-child {
+    margin-right: 0;
+  }
+  @media screen and (max-width: 750px) {
+    margin-right: 20px;
+  }
+`;
+
 const Letter = styled.div<{ $opened: boolean }>`
   align-items: center;
   background: var(--color-blue);
@@ -22,7 +33,7 @@ const Letter = styled.div<{ $opened: boolean }>`
   height: 110px;
   justify-content: center;
   line-height: 60px;
-  margin: 0 4px 12px;
+  margin: 0 4px;
   opacity: ${(props) => (props.$opened ? 1 : 0.25)};
   text-transform: uppercase;
   width: 80px;
@@ -38,12 +49,6 @@ const Letter = styled.div<{ $opened: boolean }>`
     width: 36px;
   }
 `;
-const Space = styled.div`
-  width: 48px;
-  @media screen and (max-width: 750px) {
-    width: 20px;
-  }
-`;
 
 const Word = (props: WordProps): JSX.Element => {
   const { word } = props;
@@ -51,14 +56,17 @@ const Word = (props: WordProps): JSX.Element => {
 
   return (
     <Row>
-      {word.split("").map((letter, index) => {
-        if (letter === " ") {
-          return <Space key={index} />;
-        }
+      {word.split(" ").map((word, wIndex) => {
         return (
-          <Letter key={index} $opened={lettersCorrect.includes(letter)}>
-            <span>{letter}</span>
-          </Letter>
+          <WordLine key={wIndex}>
+            {word.split("").map((letter, index) => {
+              return (
+                <Letter key={index} $opened={lettersCorrect.includes(letter)}>
+                  <span>{letter}</span>
+                </Letter>
+              );
+            })}
+          </WordLine>
         );
       })}
     </Row>

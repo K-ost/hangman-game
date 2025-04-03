@@ -1,4 +1,6 @@
-export type Screen = "main" | "categories" | "game" | "over" | "score";
+export type Screen = "main" | "categories" | "game" | "over" | "win";
+
+export type LetterType = "correct" | "wrong" | "vowel";
 
 export type Question = {
   word: string;

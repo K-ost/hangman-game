@@ -6,6 +6,7 @@ import {
   failureSound,
   LETTERS,
   MAXIMUM_QUESTIONS,
+  VOWELS,
 } from "../constants";
 import Word from "../ui/Word";
 import KeyButton from "../ui/KeyButton";
@@ -13,6 +14,7 @@ import ProgressBar from "../ui/ProgressBar";
 import useQuestion from "../hooks/useQuestion";
 import { KeyboardGrid } from "../components/Keyboard";
 import Correct from "../components/Correct";
+import { LetterType } from "../types";
 
 const GameScreen = (): JSX.Element => {
   const {
@@ -56,13 +58,18 @@ const GameScreen = (): JSX.Element => {
     if (questions.length === MAXIMUM_QUESTIONS - 1 && isCorrectAnswer) {
       resetGame();
       correctSound.play();
-      setScreen("over");
+      setScreen("win");
     }
   }, [lettersCorrect, lettersWrong, currentQuestion]);
 
   const keyHandler = (char: string) => {
     if (currentQuestion) {
-      setLetter(char, currentQuestion.word.includes(char) ? "correct" : "wrong");
+      const isVowel = VOWELS.includes(char);
+      const isChar = currentQuestion.word.includes(char);
+      if (isVowel && !isChar) {
+        return;
+      }
+      setLetter(char, isChar ? "correct" : "wrong");
     }
   };
 
@@ -81,7 +88,11 @@ const GameScreen = (): JSX.Element => {
         Question: {questions.length + 1} / {MAXIMUM_QUESTIONS}
       </p>
 
-      {currentQuestion.hint && <h3>{currentQuestion.hint}</h3>}
+      {currentQuestion.hint && (
+        <h3>
+          {currentQuestion.hint} - {currentQuestion.word}
+        </h3>
+      )}
 
       <Word word={currentQuestion.word} />
 
