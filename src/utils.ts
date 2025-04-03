@@ -13,3 +13,7 @@ export const getRandomQuestion = (array: Question[], picked: string[]): Question
   const randomEl = array[Math.floor(Math.random() * array.length)];
   return randomEl;
 };
+
+export const checkCorrectAnswer = (currentQuestion: Question, lettersCorrect: string[]) =>
+  !!currentQuestion.word.length &&
+  currentQuestion.word.split("").every((l) => lettersCorrect.includes(l) || l === " ");

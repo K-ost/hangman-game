@@ -1,4 +1,4 @@
-import { JSX, useEffect } from "react";
+import { JSX, useEffect, useMemo } from "react";
 import { useAppStore } from "../store/useAppStore";
 import {
   ATTEMPTS_NUMBER,
@@ -14,6 +14,8 @@ import ProgressBar from "../ui/ProgressBar";
 import useQuestion from "../hooks/useQuestion";
 import { KeyboardGrid } from "../components/Keyboard";
 import Correct from "../components/Correct";
+import { checkCorrectAnswer } from "../utils";
+import data from "../../data.json";
 
 const GameScreen = (): JSX.Element => {
   const {
@@ -34,11 +36,12 @@ const GameScreen = (): JSX.Element => {
     setCorrect,
     setUpdate,
     questionsLength,
-  } = useQuestion();
+  } = useQuestion({ data });
 
-  const isCorrectAnswer =
-    !!currentQuestion.word.length &&
-    currentQuestion.word.split("").every((l) => lettersCorrect.includes(l) || l === " ");
+  const isCorrectAnswer = useMemo(
+    () => checkCorrectAnswer(currentQuestion, lettersCorrect),
+    [currentQuestion, lettersCorrect]
+  );
 
   if (questionsLength === 0) return <h3>There're no questions in this category yet.</h3>;
 
@@ -55,8 +58,8 @@ const GameScreen = (): JSX.Element => {
 
     if (questions.length === MAXIMUM_QUESTIONS - 1 && isCorrectAnswer) {
       resetGame();
-      correctSound.play();
       setScreen("win");
+      correctSound.play();
     }
   }, [lettersCorrect, lettersWrong, currentQuestion]);
 

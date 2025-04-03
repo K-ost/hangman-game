@@ -1,8 +1,11 @@
 import { useAppStore } from "../store/useAppStore";
 import { getRandomQuestion } from "../utils";
-import data from "../../data.json";
-import { Question } from "../types";
+import { Category, Question } from "../types";
 import React, { useEffect, useState } from "react";
+
+type UseQuestionProps = {
+  data: Category[];
+};
 
 type useQuestionReturn = {
   question: Question;
@@ -12,7 +15,8 @@ type useQuestionReturn = {
   questionsLength: number;
 };
 
-const useQuestion = (): useQuestionReturn => {
+const useQuestion = (props: UseQuestionProps): useQuestionReturn => {
+  const { data } = props;
   const { pickedCategory, questions } = useAppStore();
   const [correct, setCorrect] = useState(false);
   const [update, setUpdate] = useState(false);
