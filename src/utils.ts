@@ -1,4 +1,4 @@
-import { Question } from "./types";
+import { AcceptedWord, Question } from "./types";
 
 export const getImageLink = (url: string): string => {
   return new URL(url, import.meta.url).href;
@@ -8,8 +8,12 @@ export const generateRandomInt = (min: number, max: number): number => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-export const getRandomQuestion = (array: Question[], picked: string[]): Question => {
-  array = array.filter((el) => !picked.includes(el.word));
+export const getRandomQuestion = (
+  array: Question[],
+  picked: AcceptedWord[]
+): Question => {
+  const pickedWords = picked.map((el) => el.word);
+  array = array.filter((el) => !pickedWords.includes(el.word));
   const randomEl = array[Math.floor(Math.random() * array.length)];
   return randomEl;
 };

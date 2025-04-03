@@ -13,3 +13,8 @@ export type Category = {
   image: string;
   questions: Question[];
 };
+
+export type AcceptedWord = {
+  word: string;
+  mistakes: number;
+};

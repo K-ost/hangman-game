@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { LetterType, Screen } from "../types";
+import { AcceptedWord, LetterType, Screen } from "../types";
 import { SCORE_POINT } from "../constants";
 
 type AppState = {
@@ -9,12 +9,12 @@ type AppState = {
   lettersCorrect: string[];
   lettersWrong: string[];
   score: number;
-  questions: string[];
+  questions: AcceptedWord[];
 
   setScreen: (data: Screen) => void;
   setCategory: (data: string) => void;
   setLetter: (letter: string, type: LetterType) => void;
-  setQuestions: (word: string) => void;
+  setQuestions: (word: AcceptedWord) => void;
   resetWord: () => void;
   resetGame: () => void;
   resetScore: () => void;

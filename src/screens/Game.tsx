@@ -25,7 +25,6 @@ const GameScreen = (): JSX.Element => {
     lettersCorrect,
     setScreen,
     resetWord,
-    resetGame,
     setQuestions,
     questions,
   } = useAppStore();
@@ -51,13 +50,19 @@ const GameScreen = (): JSX.Element => {
     }
 
     if (lettersWrong.length >= ATTEMPTS_NUMBER) {
-      resetGame();
+      setQuestions({
+        mistakes: lettersWrong.length,
+        word: currentQuestion.word,
+      });
       setScreen("over");
       failureSound.play();
     }
 
     if (questions.length === MAXIMUM_QUESTIONS - 1 && isCorrectAnswer) {
-      resetGame();
+      setQuestions({
+        mistakes: lettersCorrect.length,
+        word: currentQuestion.word,
+      });
       setScreen("win");
       correctSound.play();
     }
@@ -78,7 +83,10 @@ const GameScreen = (): JSX.Element => {
     setCorrect(false);
     setUpdate(true);
     resetWord();
-    setQuestions(currentQuestion.word);
+    setQuestions({
+      mistakes: lettersWrong.length,
+      word: currentQuestion.word,
+    });
   };
 
   return (

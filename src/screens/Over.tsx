@@ -1,13 +1,15 @@
 import { JSX } from "react";
 import NewGameBtn from "../components/NewGameBtn";
+import Stat from "../components/Stat";
 
 const OverScreen = (): JSX.Element => {
   return (
-    <div className="app-center">
-      <div>
-        <h1>GAME OVER</h1>
+    <div>
+      <h1>GAME OVER</h1>
+      <div className="text-center">
         <NewGameBtn />
       </div>
+      <Stat />
     </div>
   );
 };
