@@ -109,12 +109,10 @@ Error generating stack: `+l.message+`
   margin: 40px 0;
 `,pg=Lt.div`
   display: flex;
-  margin: 0 48px 12px 0;
-  &:last-child {
-    margin-right: 0;
-  }
+  margin: 0 24px 12px;
   @media screen and (max-width: 750px) {
-    margin-right: 20px;
+    margin-left: 12px;
+    margin-right: 12px;
   }
 `,Sg=Lt.div`
   align-items: center;
