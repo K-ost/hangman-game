@@ -18,9 +18,9 @@ const mockedPickedQuestions: AcceptedWord[] = [
 describe("Utils", () => {
   it("getRandomQuestion", () => {
     const question = getRandomQuestion(mockedQuestions, mockedPickedQuestions);
-    expect(question.hasOwnProperty("word")).toBe(true);
-    const question2 = getRandomQuestion(mockedQuestions, mockedPickedQuestions);
-    expect(question.word).not.toBe(question2.word);
+    expect(question.hasOwnProperty("word")).toStrictEqual(true);
+    const array = mockedPickedQuestions.map((el) => el.word);
+    expect(array.includes(question.word)).toBe(false);
   });
 
   it("checkCorrectAnswer", () => {
