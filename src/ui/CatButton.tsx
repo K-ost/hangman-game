@@ -1,6 +1,5 @@
 import { JSX } from "react";
 import styled from "styled-components";
-import { getImageLink } from "../utils";
 
 type CatButtonProps = {
   img: string;
@@ -45,7 +44,7 @@ const CatButton = (props: CatButtonProps): JSX.Element => {
 
   return (
     <Button onClick={() => handler()}>
-      <img src={getImageLink(img)} alt="" />
+      <img src={img} alt="" />
       {name}
     </Button>
   );

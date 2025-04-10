@@ -1,9 +1,5 @@
 import { AcceptedWord, Question } from "./types";
 
-export const getImageLink = (url: string): string => {
-  return new URL(url, import.meta.url).href;
-};
-
 export const getRandomQuestion = (
   array: Question[],
   picked: AcceptedWord[]
