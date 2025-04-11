@@ -3,11 +3,11 @@ import { checkCorrectAnswer, getRandomQuestion } from "../utils";
 import { AcceptedWord, Question } from "../types";
 
 const mockedQuestions: Question[] = [
-  { word: "dog" },
-  { word: "cat" },
-  { word: "bear" },
-  { word: "panda" },
-  { word: "cow" },
+  { en: "dog", ru: "собака" },
+  { en: "cat", ru: "кот" },
+  { en: "bear", ru: "медведь" },
+  { en: "panda", ru: "панда" },
+  { en: "cow", ru: "корова" },
 ];
 const mockedPickedQuestions: AcceptedWord[] = [
   { word: "dog", mistakes: 1 },
@@ -17,16 +17,20 @@ const mockedPickedQuestions: AcceptedWord[] = [
 
 describe("Utils", () => {
   it("getRandomQuestion", () => {
-    const question = getRandomQuestion(mockedQuestions, mockedPickedQuestions);
-    expect(question.hasOwnProperty("word")).toStrictEqual(true);
+    const question = getRandomQuestion(mockedQuestions, mockedPickedQuestions, "en");
+    expect(question.hasOwnProperty("en")).toStrictEqual(true);
     const array = mockedPickedQuestions.map((el) => el.word);
-    expect(array.includes(question.word)).toBe(false);
+    expect(array.includes(question.en)).toBe(false);
   });
 
   it("checkCorrectAnswer", () => {
-    const isCorrect = checkCorrectAnswer({ word: "cat" }, ["c", "a", "t"]);
+    const isCorrect = checkCorrectAnswer({ en: "cat", ru: "кот" }, ["c", "a", "t"], "en");
     expect(isCorrect).toBe(true);
-    const isCorrect2 = checkCorrectAnswer({ word: "cat" }, ["b", "a", "t"]);
+    const isCorrect2 = checkCorrectAnswer(
+      { en: "cat", ru: "кот" },
+      ["b", "a", "t"],
+      "en"
+    );
     expect(isCorrect2).toBe(false);
   });
 });
