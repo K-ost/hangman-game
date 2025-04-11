@@ -1,7 +1,6 @@
 import { JSX } from "react";
 import { useAppStore } from "../store/useAppStore";
 import styled from "styled-components";
-import { SCORE_POINT } from "../constants";
 import { useTranslation } from "react-i18next";
 
 const Table = styled.table`

@@ -1,5 +1,5 @@
 import { VOWELS, VOWELS_RU } from "./constants";
-import { AcceptedWord, LangType, Question, Screen } from "./types";
+import { AcceptedWord, LangType, Question } from "./types";
 
 export const isVowelChecking = (letter: string, lang: LangType): boolean => {
   if (lang === "ru") {
