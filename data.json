@@ -1,261 +1,894 @@
 [
   {
     "id": 1,
-    "category": "Animals",
-    "image": "./assets/animal.svg",
+    "category": {
+      "en": "Fruits",
+      "ru": "Фрукты"
+    },
+    "image": "https://www.svgrepo.com/show/429782/apple-apples-fruit.svg",
     "questions": [
-      { "word": "dog", "hint": "A common pet." },
-      { "word": "cat", "hint": "A small furry pet with whiskers." },
-      { "word": "elephant", "hint": "A large gray animal with a trunk." },
-      { "word": "fish", "hint": "Lives in water and swims." },
-      { "word": "bird", "hint": "Has wings and can fly." },
-      { "word": "rabbit", "hint": "A small animal with long ears, hops around." },
-      { "word": "lion", "hint": "The king of the jungle." },
-      { "word": "tiger", "hint": "A large striped cat." },
-      { "word": "cow", "hint": "Produces milk." },
-      { "word": "horse", "hint": "A large animal often used for riding." },
-      { "word": "giraffe", "hint": "A very tall animal with a long neck." },
-      { "word": "monkey", "hint": "An animal that likes to climb trees." },
-      { "word": "zebra", "hint": "An animal with black and white stripes." },
-      { "word": "snake", "hint": "A reptile that slithers on the ground." },
-      { "word": "panda", "hint": "A black and white bear from China." }
+      {
+        "en": "apple",
+        "ru": "яблоко"
+      },
+      {
+        "en": "banana",
+        "ru": "банан"
+      },
+      {
+        "en": "grape",
+        "ru": "виноград"
+      },
+      {
+        "en": "orange",
+        "ru": "апельсин"
+      },
+      {
+        "en": "pear",
+        "ru": "груша"
+      },
+      {
+        "en": "peach",
+        "ru": "персик"
+      },
+      {
+        "en": "plum",
+        "ru": "слива"
+      },
+      {
+        "en": "kiwi",
+        "ru": "киви"
+      },
+      {
+        "en": "pineapple",
+        "ru": "ананас"
+      },
+      {
+        "en": "melon",
+        "ru": "дыня"
+      },
+      {
+        "en": "mango",
+        "ru": "манго"
+      },
+      {
+        "en": "lemon",
+        "ru": "лимон"
+      },
+      {
+        "en": "lime",
+        "ru": "лайм"
+      },
+      {
+        "en": "apricot",
+        "ru": "абрикос"
+      },
+      {
+        "en": "cherry",
+        "ru": "вишня"
+      },
+      {
+        "en": "strawberry",
+        "ru": "клубника"
+      },
+      {
+        "en": "raspberry",
+        "ru": "малина"
+      },
+      {
+        "en": "blueberry",
+        "ru": "черника"
+      },
+      {
+        "en": "blackberry",
+        "ru": "ежевика"
+      },
+      {
+        "en": "fig",
+        "ru": "инжир"
+      }
     ]
   },
   {
     "id": 2,
-    "category": "Fruits",
-    "image": "./assets/fruit.svg",
+    "category": {
+      "en": "Animals",
+      "ru": "Животные"
+    },
+    "image": "https://www.svgrepo.com/show/454501/animal-domestic-panda.svg",
     "questions": [
-      { "word": "apple", "hint": "A red or green fruit." },
-      { "word": "banana", "hint": "A yellow fruit that monkeys like." },
-      { "word": "grape", "hint": "A small round fruit that grows in bunches." },
-      { "word": "pear", "hint": "A fruit with a round bottom and narrow top." },
-      { "word": "orange", "hint": "A citrus fruit that is usually orange." },
-      { "word": "strawberry", "hint": "A red fruit with small seeds on the outside." },
-      { "word": "pineapple", "hint": "A tropical fruit with spiky leaves." },
-      { "word": "peach", "hint": "A soft fruit with a fuzzy skin." },
-      { "word": "watermelon", "hint": "A large, green fruit with red inside." },
-      { "word": "cherry", "hint": "A small red fruit often found in pairs." },
-      { "word": "kiwi", "hint": "A small brown fruit with green flesh inside." },
-      { "word": "mango", "hint": "A sweet tropical fruit with a large pit." },
-      { "word": "plum", "hint": "A small round fruit that is often purple or red." },
-      { "word": "apricot", "hint": "A small fruit that is orange and soft." },
-      { "word": "papaya", "hint": "A tropical fruit with orange flesh." }
+      {
+        "en": "tiger",
+        "ru": "тигр"
+      },
+      {
+        "en": "lion",
+        "ru": "лев"
+      },
+      {
+        "en": "elephant",
+        "ru": "слон"
+      },
+      {
+        "en": "rabbit",
+        "ru": "кролик"
+      },
+      {
+        "en": "bear",
+        "ru": "медведь"
+      },
+      {
+        "en": "wolf",
+        "ru": "волк"
+      },
+      {
+        "en": "fox",
+        "ru": "лиса"
+      },
+      {
+        "en": "zebra",
+        "ru": "зебра"
+      },
+      {
+        "en": "giraffe",
+        "ru": "жираф"
+      },
+      {
+        "en": "monkey",
+        "ru": "обезьяна"
+      },
+      {
+        "en": "dog",
+        "ru": "собака"
+      },
+      {
+        "en": "cat",
+        "ru": "кошка"
+      },
+      {
+        "en": "mouse",
+        "ru": "мышь"
+      },
+      {
+        "en": "deer",
+        "ru": "олень"
+      },
+      {
+        "en": "goat",
+        "ru": "коза"
+      },
+      {
+        "en": "cow",
+        "ru": "корова"
+      },
+      {
+        "en": "sheep",
+        "ru": "овца"
+      },
+      {
+        "en": "horse",
+        "ru": "лошадь"
+      },
+      {
+        "en": "panda",
+        "ru": "панда"
+      },
+      {
+        "en": "kangaroo",
+        "ru": "кенгуру"
+      }
     ]
   },
   {
     "id": 3,
-    "category": "Colors",
-    "image": "./assets/color.svg",
+    "category": {
+      "en": "Colors",
+      "ru": "Цвета"
+    },
+    "image": "https://www.svgrepo.com/show/207436/palette-print.svg",
     "questions": [
-      { "word": "red", "hint": "The color of an apple." },
-      { "word": "blue", "hint": "The color of the sky." },
-      { "word": "yellow", "hint": "The color of the sun." },
-      { "word": "green", "hint": "The color of grass." },
-      { "word": "pink", "hint": "A color often seen in flowers like roses." },
-      { "word": "orange", "hint": "A color that comes from mixing red and yellow." },
-      { "word": "purple", "hint": "A color between red and blue." },
-      { "word": "brown", "hint": "The color of chocolate or tree bark." },
-      { "word": "black", "hint": "The color of the night sky." },
-      { "word": "white", "hint": "The color of snow." },
-      { "word": "gray", "hint": "The color of a cloudy day." },
-      { "word": "cyan", "hint": "A color similar to light blue." },
-      { "word": "beige", "hint": "A pale, light brown color." },
-      { "word": "turquoise", "hint": "A blue-green color often seen in oceans." },
-      { "word": "teal", "hint": "A color between blue and green." }
+      {
+        "en": "red",
+        "ru": "красный"
+      },
+      {
+        "en": "blue",
+        "ru": "синий"
+      },
+      {
+        "en": "green",
+        "ru": "зелёный"
+      },
+      {
+        "en": "yellow",
+        "ru": "жёлтый"
+      },
+      {
+        "en": "orange",
+        "ru": "оранжевый"
+      },
+      {
+        "en": "purple",
+        "ru": "фиолетовый"
+      },
+      {
+        "en": "pink",
+        "ru": "розовый"
+      },
+      {
+        "en": "brown",
+        "ru": "коричневый"
+      },
+      {
+        "en": "black",
+        "ru": "чёрный"
+      },
+      {
+        "en": "white",
+        "ru": "белый"
+      },
+      {
+        "en": "gray",
+        "ru": "серый"
+      },
+      {
+        "en": "beige",
+        "ru": "бежевый"
+      },
+      {
+        "en": "turquoise",
+        "ru": "бирюзовый"
+      },
+      {
+        "en": "gold",
+        "ru": "золотой"
+      },
+      {
+        "en": "silver",
+        "ru": "серебряный"
+      },
+      {
+        "en": "maroon",
+        "ru": "бордовый"
+      },
+      {
+        "en": "lime",
+        "ru": "лаймовый"
+      },
+      {
+        "en": "violet",
+        "ru": "фиалковый"
+      }
     ]
   },
   {
     "id": 4,
-    "category": "Objects",
-    "image": "./assets/chair.svg",
+    "category": {
+      "en": "Clothes",
+      "ru": "Одежда"
+    },
+    "image": "https://www.svgrepo.com/show/234666/clothes-shirt.svg",
     "questions": [
-      { "word": "book", "hint": "Something you read." },
-      { "word": "ball", "hint": "A round object used in many games." },
-      { "word": "table", "hint": "A flat surface used for eating or working." },
-      { "word": "pencil", "hint": "An object used to write." },
-      { "word": "chair", "hint": "An object used for sitting." },
-      { "word": "cup", "hint": "An object used for drinking." },
-      { "word": "watch", "hint": "An object used to tell time." },
-      { "word": "phone", "hint": "A device used to make calls." },
-      { "word": "key", "hint": "A small object used to open locks." },
       {
-        "word": "glove",
-        "hint": "An object worn on your hand for warmth or protection."
+        "en": "shirt",
+        "ru": "рубашка"
       },
-      { "word": "hat", "hint": "An object worn on your head." },
-      { "word": "backpack", "hint": "A bag worn on your back to carry things." },
-      { "word": "bottle", "hint": "A container used to hold liquids." },
-      { "word": "scissors", "hint": "An object used to cut things." },
-      { "word": "umbrella", "hint": "An object used to protect you from rain." }
+      {
+        "en": "pants",
+        "ru": "брюки"
+      },
+      {
+        "en": "hat",
+        "ru": "шляпа"
+      },
+      {
+        "en": "jacket",
+        "ru": "куртка"
+      },
+      {
+        "en": "coat",
+        "ru": "пальто"
+      },
+      {
+        "en": "dress",
+        "ru": "платье"
+      },
+      {
+        "en": "skirt",
+        "ru": "юбка"
+      },
+      {
+        "en": "shoes",
+        "ru": "туфли"
+      },
+      {
+        "en": "boots",
+        "ru": "сапоги"
+      },
+      {
+        "en": "scarf",
+        "ru": "шарф"
+      },
+      {
+        "en": "gloves",
+        "ru": "перчатки"
+      },
+      {
+        "en": "socks",
+        "ru": "носки"
+      },
+      {
+        "en": "sweater",
+        "ru": "свитер"
+      },
+      {
+        "en": "jeans",
+        "ru": "джинсы"
+      },
+      {
+        "en": "t-shirt",
+        "ru": "футболка"
+      },
+      {
+        "en": "cap",
+        "ru": "кепка"
+      },
+      {
+        "en": "belt",
+        "ru": "ремень"
+      },
+      {
+        "en": "shorts",
+        "ru": "шорты"
+      },
+      {
+        "en": "blouse",
+        "ru": "блузка"
+      },
+      {
+        "en": "tie",
+        "ru": "галстук"
+      }
     ]
   },
   {
     "id": 5,
-    "category": "Vehicles",
-    "image": "./assets/car.svg",
+    "category": {
+      "en": "Professions",
+      "ru": "Профессии"
+    },
+    "image": "https://www.svgrepo.com/show/277291/lawyer.svg",
     "questions": [
-      { "word": "car", "hint": "A vehicle that drives on the road." },
-      { "word": "bus", "hint": "A large vehicle that carries many passengers." },
-      { "word": "bike", "hint": "A two-wheeled vehicle you pedal." },
-      { "word": "boat", "hint": "A vehicle that travels on water." },
-      { "word": "plane", "hint": "A vehicle that flies in the sky." },
-      { "word": "truck", "hint": "A large vehicle used to carry goods." },
-      { "word": "train", "hint": "A vehicle that travels on tracks." },
-      { "word": "scooter", "hint": "A small two-wheeled vehicle often used for fun." },
-      { "word": "helicopter", "hint": "A flying vehicle with rotating blades." },
-      { "word": "submarine", "hint": "A vehicle that travels underwater." },
-      { "word": "motorcycle", "hint": "A two-wheeled vehicle that you ride." },
       {
-        "word": "wagon",
-        "hint": "A small vehicle with wheels often pulled by a horse."
+        "en": "doctor",
+        "ru": "врач"
       },
       {
-        "word": "hot air balloon",
-        "hint": "A large balloon that can carry people through the air."
+        "en": "teacher",
+        "ru": "учитель"
       },
       {
-        "word": "tram",
-        "hint": "A vehicle that runs on tracks and is used for public transport."
+        "en": "engineer",
+        "ru": "инженер"
       },
-      { "word": "skateboard", "hint": "A board with wheels you ride on the ground." }
+      {
+        "en": "nurse",
+        "ru": "медсестра"
+      },
+      {
+        "en": "driver",
+        "ru": "водитель"
+      },
+      {
+        "en": "policeman",
+        "ru": "полицейский"
+      },
+      {
+        "en": "fireman",
+        "ru": "пожарный"
+      },
+      {
+        "en": "chef",
+        "ru": "шеф-повар"
+      },
+      {
+        "en": "waiter",
+        "ru": "официант"
+      },
+      {
+        "en": "artist",
+        "ru": "художник"
+      },
+      {
+        "en": "musician",
+        "ru": "музыкант"
+      },
+      {
+        "en": "actor",
+        "ru": "актёр"
+      },
+      {
+        "en": "dancer",
+        "ru": "танцор"
+      },
+      {
+        "en": "pilot",
+        "ru": "пилот"
+      },
+      {
+        "en": "farmer",
+        "ru": "фермер"
+      },
+      {
+        "en": "builder",
+        "ru": "строитель"
+      },
+      {
+        "en": "journalist",
+        "ru": "журналист"
+      },
+      {
+        "en": "lawyer",
+        "ru": "юрист"
+      },
+      {
+        "en": "scientist",
+        "ru": "учёный"
+      },
+      {
+        "en": "programmer",
+        "ru": "программист"
+      }
     ]
   },
   {
     "id": 6,
-    "category": "Nature",
-    "image": "./assets/tree.svg",
+    "category": {
+      "en": "Countries",
+      "ru": "Страны"
+    },
+    "image": "https://www.svgrepo.com/show/365950/usa.svg",
     "questions": [
-      { "word": "tree", "hint": "A tall plant with branches and leaves." },
-      { "word": "mountain", "hint": "A large, tall landform." },
-      { "word": "river", "hint": "A large flowing body of water." },
-      { "word": "flower", "hint": "A colorful plant that blooms." },
-      { "word": "cloud", "hint": "A mass of water vapor in the sky." },
-      { "word": "desert", "hint": "A hot, dry area with little water." },
       {
-        "word": "ocean",
-        "hint": "A vast body of saltwater covering most of the Earth."
+        "en": "russia",
+        "ru": "россия"
       },
-      { "word": "rain", "hint": "Water droplets that fall from the sky." },
-      { "word": "snow", "hint": "Frozen water that falls as flakes." },
-      { "word": "sand", "hint": "Small grains found on beaches." },
-      { "word": "volcano", "hint": "A mountain that erupts with lava." },
-      { "word": "cave", "hint": "A natural underground space." },
-      { "word": "forest", "hint": "A large area of trees and plants." },
-      { "word": "island", "hint": "A piece of land surrounded by water." },
-      { "word": "grass", "hint": "Small green plants that cover the ground." }
+      {
+        "en": "usa",
+        "ru": "сша"
+      },
+      {
+        "en": "china",
+        "ru": "китай"
+      },
+      {
+        "en": "france",
+        "ru": "франция"
+      },
+      {
+        "en": "germany",
+        "ru": "германия"
+      },
+      {
+        "en": "japan",
+        "ru": "япония"
+      },
+      {
+        "en": "canada",
+        "ru": "канада"
+      },
+      {
+        "en": "brazil",
+        "ru": "бразилия"
+      },
+      {
+        "en": "india",
+        "ru": "индия"
+      },
+      {
+        "en": "mexico",
+        "ru": "мексика"
+      },
+      {
+        "en": "italy",
+        "ru": "италия"
+      },
+      {
+        "en": "spain",
+        "ru": "испания"
+      },
+      {
+        "en": "ukraine",
+        "ru": "украина"
+      },
+      {
+        "en": "poland",
+        "ru": "польша"
+      },
+      {
+        "en": "turkey",
+        "ru": "турция"
+      },
+      {
+        "en": "sweden",
+        "ru": "швеция"
+      },
+      {
+        "en": "norway",
+        "ru": "норвегия"
+      },
+      {
+        "en": "finland",
+        "ru": "финляндия"
+      },
+      {
+        "en": "australia",
+        "ru": "австралия"
+      },
+      {
+        "en": "egypt",
+        "ru": "египет"
+      }
     ]
   },
   {
     "id": 7,
-    "category": "Sports",
-    "image": "./assets/basketball.svg",
+    "category": {
+      "en": "Sports",
+      "ru": "Виды спорта"
+    },
+    "image": "https://www.svgrepo.com/show/513271/basketball.svg",
     "questions": [
-      { "word": "soccer", "hint": "A game played with a ball and goals." },
-      { "word": "basketball", "hint": "A game where you shoot a ball into a hoop." },
-      { "word": "tennis", "hint": "A game played with rackets and a ball." },
-      { "word": "baseball", "hint": "A game played with a bat and a ball." },
       {
-        "word": "football",
-        "hint": "A game where players try to score by carrying or kicking a ball."
+        "en": "soccer",
+        "ru": "футбол"
       },
-      { "word": "swimming", "hint": "A sport where you move in water." },
-      { "word": "gymnastics", "hint": "A sport involving exercises and acrobatics." },
-      { "word": "volleyball", "hint": "A game where two teams hit a ball over a net." },
       {
-        "word": "cricket",
-        "hint": "A game played with a bat and ball, mostly popular in England."
+        "en": "basketball",
+        "ru": "баскетбол"
       },
-      { "word": "hockey", "hint": "A game played on ice with a puck and sticks." },
       {
-        "word": "rugby",
-        "hint": "A contact sport where players try to carry the ball over a goal line."
+        "en": "tennis",
+        "ru": "теннис"
       },
-      { "word": "skating", "hint": "A sport where you glide on ice or pavement." },
       {
-        "word": "ping pong",
-        "hint": "A game played with paddles and a small ball on a table."
+        "en": "boxing",
+        "ru": "бокс"
       },
-      { "word": "boxing", "hint": "A sport where two people fight with fists." },
-      { "word": "archery", "hint": "A sport where you shoot arrows at a target." }
+      {
+        "en": "golf",
+        "ru": "гольф"
+      },
+      {
+        "en": "hockey",
+        "ru": "хоккей"
+      },
+      {
+        "en": "baseball",
+        "ru": "бейсбол"
+      },
+      {
+        "en": "volleyball",
+        "ru": "волейбол"
+      },
+      {
+        "en": "rugby",
+        "ru": "регби"
+      },
+      {
+        "en": "skiing",
+        "ru": "лыжи"
+      },
+      {
+        "en": "snowboarding",
+        "ru": "сноуборд"
+      },
+      {
+        "en": "swimming",
+        "ru": "плавание"
+      },
+      {
+        "en": "cycling",
+        "ru": "велоспорт"
+      },
+      {
+        "en": "wrestling",
+        "ru": "борьба"
+      },
+      {
+        "en": "karate",
+        "ru": "карате"
+      },
+      {
+        "en": "judo",
+        "ru": "дзюдо"
+      },
+      {
+        "en": "archery",
+        "ru": "стрельба из лука"
+      },
+      {
+        "en": "fencing",
+        "ru": "фехтование"
+      },
+      {
+        "en": "surfing",
+        "ru": "серфинг"
+      },
+      {
+        "en": "skating",
+        "ru": "катание на коньках"
+      }
     ]
   },
   {
     "id": 8,
-    "category": "Jobs",
-    "image": "./assets/engineer.svg",
+    "category": {
+      "en": "Vehicles",
+      "ru": "Транспорт"
+    },
+    "image": "https://www.svgrepo.com/show/402822/train.svg",
     "questions": [
-      { "word": "teacher", "hint": "A person who educates students." },
-      { "word": "doctor", "hint": "A person who helps people when they are sick." },
       {
-        "word": "nurse",
-        "hint": "A person who assists doctors in taking care of patients."
+        "en": "car",
+        "ru": "машина"
       },
-      { "word": "chef", "hint": "A person who cooks food professionally." },
-      { "word": "farmer", "hint": "A person who grows crops or raises animals." },
-      { "word": "engineer", "hint": "A person who designs and builds things." },
       {
-        "word": "police",
-        "hint": "A person who keeps people safe by enforcing the law."
+        "en": "bus",
+        "ru": "автобус"
       },
-      { "word": "firefighter", "hint": "A person who puts out fires." },
-      { "word": "musician", "hint": "A person who plays an instrument or sings." },
-      { "word": "actor", "hint": "A person who performs in movies or plays." },
-      { "word": "artist", "hint": "A person who creates art." },
-      { "word": "pilot", "hint": "A person who flies airplanes." },
-      { "word": "dentist", "hint": "A person who takes care of teeth." },
-      { "word": "scientist", "hint": "A person who studies and works with science." },
-      { "word": "lawyer", "hint": "A person who represents clients in legal matters." }
+      {
+        "en": "bicycle",
+        "ru": "велосипед"
+      },
+      {
+        "en": "motorcycle",
+        "ru": "мотоцикл"
+      },
+      {
+        "en": "train",
+        "ru": "поезд"
+      },
+      {
+        "en": "airplane",
+        "ru": "самолёт"
+      },
+      {
+        "en": "boat",
+        "ru": "лодка"
+      },
+      {
+        "en": "truck",
+        "ru": "грузовик"
+      },
+      {
+        "en": "tram",
+        "ru": "трамвай"
+      },
+      {
+        "en": "subway",
+        "ru": "метро"
+      },
+      {
+        "en": "helicopter",
+        "ru": "вертолёт"
+      },
+      {
+        "en": "scooter",
+        "ru": "скутер"
+      },
+      {
+        "en": "ship",
+        "ru": "корабль"
+      },
+      {
+        "en": "taxi",
+        "ru": "такси"
+      },
+      {
+        "en": "van",
+        "ru": "фургон"
+      },
+      {
+        "en": "jeep",
+        "ru": "джип"
+      },
+      {
+        "en": "skateboard",
+        "ru": "скейтборд"
+      },
+      {
+        "en": "yacht",
+        "ru": "яхта"
+      },
+      {
+        "en": "canoe",
+        "ru": "каноэ"
+      },
+      {
+        "en": "train",
+        "ru": "поезд"
+      }
     ]
   },
   {
     "id": 9,
-    "category": "Buildings",
-    "image": "./assets/house.svg",
+    "category": {
+      "en": "Body Parts",
+      "ru": "Части тела"
+    },
+    "image": "https://www.svgrepo.com/show/284388/hands-hold.svg",
     "questions": [
-      { "word": "house", "hint": "A building where people live." },
-      { "word": "school", "hint": "A building where students learn." },
-      { "word": "church", "hint": "A building for religious worship." },
-      { "word": "library", "hint": "A place where books are stored." },
-      { "word": "hospital", "hint": "A building where people receive medical care." },
-      { "word": "store", "hint": "A place where goods are sold." },
-      { "word": "office", "hint": "A building where people work." },
-      { "word": "apartment", "hint": "A living space in a large building." },
-      { "word": "factory", "hint": "A building where things are made." },
-      { "word": "stadium", "hint": "A large building for sporting events." },
-      { "word": "hotel", "hint": "A place where people stay temporarily." },
-      { "word": "post office", "hint": "A place where you send and receive mail." },
-      { "word": "restaurant", "hint": "A place where you can buy and eat food." },
-      { "word": "bakery", "hint": "A place where bread and cakes are made." },
-      { "word": "museum", "hint": "A place where historical items are displayed." }
+      {
+        "en": "head",
+        "ru": "голова"
+      },
+      {
+        "en": "arm",
+        "ru": "рука"
+      },
+      {
+        "en": "leg",
+        "ru": "нога"
+      },
+      {
+        "en": "eye",
+        "ru": "глаз"
+      },
+      {
+        "en": "nose",
+        "ru": "нос"
+      },
+      {
+        "en": "mouth",
+        "ru": "рот"
+      },
+      {
+        "en": "ear",
+        "ru": "ухо"
+      },
+      {
+        "en": "hand",
+        "ru": "кисть"
+      },
+      {
+        "en": "foot",
+        "ru": "ступня"
+      },
+      {
+        "en": "shoulder",
+        "ru": "плечо"
+      },
+      {
+        "en": "knee",
+        "ru": "колено"
+      },
+      {
+        "en": "elbow",
+        "ru": "локоть"
+      },
+      {
+        "en": "back",
+        "ru": "спина"
+      },
+      {
+        "en": "chest",
+        "ru": "грудь"
+      },
+      {
+        "en": "stomach",
+        "ru": "живот"
+      },
+      {
+        "en": "neck",
+        "ru": "шея"
+      },
+      {
+        "en": "finger",
+        "ru": "палец"
+      },
+      {
+        "en": "toe",
+        "ru": "палец ноги"
+      },
+      {
+        "en": "wrist",
+        "ru": "запястье"
+      },
+      {
+        "en": "ankle",
+        "ru": "лодыжка"
+      }
     ]
   },
   {
     "id": 10,
-    "category": "Countries",
-    "image": "./assets/flag.svg",
+    "category": {
+      "en": "Furniture",
+      "ru": "Мебель"
+    },
+    "image": "https://www.svgrepo.com/show/380373/desk-furniture-interior-table-decoration-9.svg",
     "questions": [
-      { "word": "united states", "hint": "Country in North America" },
-      { "word": "canada", "hint": "Country in North America" },
-      { "word": "mexico", "hint": "Country in North America" },
-      { "word": "argentina", "hint": "Country in South America" },
-      { "word": "brazil", "hint": "Country in South America" },
-      { "word": "chile", "hint": "Country in South America" },
-      { "word": "norway", "hint": "Country in Europe" },
-      { "word": "sweden", "hint": "Country in Europe" },
-      { "word": "denmark", "hint": "Country in Europe" },
-      { "word": "australia", "hint": "Country and Continent" },
-      { "word": "austria", "hint": "Country in Europe" },
-      { "word": "belgium", "hint": "Country in Europe" },
-      { "word": "france", "hint": "Country in Europe" },
-      { "word": "italy", "hint": "Country in Europe" },
-      { "word": "germany", "hint": "Country in Europe" },
-      { "word": "spain", "hint": "Country in Europe" },
-      { "word": "portugal", "hint": "Country in Europe" },
-      { "word": "egypt", "hint": "Country in Africa" },
-      { "word": "china", "hint": "Country in Asia" },
-      { "word": "japan", "hint": "Country in Asia" },
-      { "word": "south korea", "hint": "Country in Asia" }
+      {
+        "en": "chair",
+        "ru": "стул"
+      },
+      {
+        "en": "table",
+        "ru": "стол"
+      },
+      {
+        "en": "sofa",
+        "ru": "диван"
+      },
+      {
+        "en": "bed",
+        "ru": "кровать"
+      },
+      {
+        "en": "wardrobe",
+        "ru": "шкаф"
+      },
+      {
+        "en": "desk",
+        "ru": "письменный стол"
+      },
+      {
+        "en": "shelf",
+        "ru": "полка"
+      },
+      {
+        "en": "cabinet",
+        "ru": "шкафчик"
+      },
+      {
+        "en": "armchair",
+        "ru": "кресло"
+      },
+      {
+        "en": "bench",
+        "ru": "скамейка"
+      },
+      {
+        "en": "mirror",
+        "ru": "зеркало"
+      },
+      {
+        "en": "dresser",
+        "ru": "комод"
+      },
+      {
+        "en": "stool",
+        "ru": "табурет"
+      },
+      {
+        "en": "lamp",
+        "ru": "лампа"
+      },
+      {
+        "en": "rug",
+        "ru": "ковёр"
+      },
+      {
+        "en": "cupboard",
+        "ru": "буфет"
+      },
+      {
+        "en": "chest",
+        "ru": "сундук"
+      },
+      {
+        "en": "hanger",
+        "ru": "вешалка"
+      },
+      {
+        "en": "mattress",
+        "ru": "матрас"
+      },
+      {
+        "en": "pillow",
+        "ru": "подушка"
+      }
     ]
   }
 ]

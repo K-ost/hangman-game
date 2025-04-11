@@ -3,6 +3,7 @@ import data from "../../data.json";
 import CatButton from "../ui/CatButton";
 import { useAppStore } from "../store/useAppStore";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 const Grid = styled.div`
   display: grid;
@@ -15,7 +16,8 @@ const Grid = styled.div`
 `;
 
 const CategoriesScreen = (): JSX.Element => {
-  const { setCategory, setScreen } = useAppStore();
+  const { setCategory, setScreen, lang } = useAppStore();
+  const { t } = useTranslation();
 
   const catPicker = (cat: string) => {
     setCategory(cat);
@@ -24,14 +26,14 @@ const CategoriesScreen = (): JSX.Element => {
 
   return (
     <div className="fullWidth">
-      <h1>Pick the category</h1>
+      <h1>{t("screen.cats.title")}</h1>
       <Grid>
         {data.map((category) => (
           <CatButton
             key={category.id}
             img={category.image}
-            name={category.category}
-            handler={() => catPicker(category.category)}
+            name={category.category[lang]}
+            handler={() => catPicker(category.category[lang])}
           />
         ))}
       </Grid>

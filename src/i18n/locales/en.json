@@ -1,0 +1,28 @@
+{
+  "header": {
+    "score": "Score"
+  },
+  "screen": {
+    "main": {
+      "btn": "New game"
+    },
+    "cats": {
+      "title": "Pick the category"
+    },
+    "game": {
+      "title": "Category: {{ title }}"
+    },
+    "over": {
+      "title": "Game over"
+    },
+    "win": {
+      "title": "You win"
+    }
+  },
+  "stat": {
+    "question": "Question",
+    "mistakes": "Mistakes",
+    "score": "Score",
+    "total": "Total score"
+  }
+}

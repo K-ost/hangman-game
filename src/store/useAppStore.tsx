@@ -1,9 +1,10 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { AcceptedWord, LetterType, Screen } from "../types";
+import { AcceptedWord, LangType, LetterType, Screen } from "../types";
 import { SCORE_POINT } from "../constants";
 
 type AppState = {
+  lang: LangType;
   screen: Screen;
   pickedCategory: string;
   lettersCorrect: string[];
@@ -11,6 +12,7 @@ type AppState = {
   score: number;
   questions: AcceptedWord[];
 
+  setLang: (lang: LangType) => void;
   setScreen: (data: Screen) => void;
   setCategory: (data: string) => void;
   setLetter: (letter: string, type: LetterType) => void;
@@ -22,12 +24,15 @@ type AppState = {
 
 export const useAppStore = create<AppState>()(
   devtools((set) => ({
+    lang: "en",
     screen: "main",
     pickedCategory: "",
     lettersCorrect: [],
     lettersWrong: [],
     score: 0,
     questions: [],
+
+    setLang: (lang) => set(() => ({ lang })),
 
     setScreen: (data) => set(() => ({ screen: data })),
 
@@ -51,7 +56,7 @@ export const useAppStore = create<AppState>()(
 
     resetWord: () => set(() => ({ lettersCorrect: [], lettersWrong: [] })),
 
-    resetScore: () => set(() => ({ score: 0 })),
+    resetScore: () => set(() => ({ score: 0, questions: [] })),
 
     resetGame: () =>
       set(() => ({

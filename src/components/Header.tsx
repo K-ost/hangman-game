@@ -1,12 +1,13 @@
 import { JSX } from "react";
 import styled from "styled-components";
 import { useAppStore } from "../store/useAppStore";
+import LangBox from "../ui/LangBox";
+import { useTranslation } from "react-i18next";
 
 const Head = styled.header`
   align-items: center;
   border-bottom: 1px solid var(--color-grey);
   display: flex;
-  justify-content: space-between;
   margin: 0 0 40px;
   padding: 30px 0;
   @media screen and (max-width: 750px) {
@@ -46,12 +47,14 @@ const Score = styled.div`
 
 const Header = (): JSX.Element => {
   const { score } = useAppStore();
+  const { t } = useTranslation();
 
   return (
     <Head>
       <Title>Hangman</Title>
+      <LangBox />
       <Score>
-        Score: <div>{score}</div>
+        {t("header.score")}: <div>{score}</div>
       </Score>
     </Head>
   );

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useAppStore } from "../store/useAppStore";
 import ok from "../assets/check.svg";
 import times from "../assets/times.svg";
-import { VOWELS } from "../constants";
+import { isVowelChecking } from "../utils";
 
 type KeyButtonProps = {
   letter: string;
@@ -13,8 +13,8 @@ type KeyButtonProps = {
 
 type PressedType = "correct" | "incorrect" | "default";
 
-const BTN_WIDTH = 90;
-const BTN_HEIGHT = 72;
+const BTN_WIDTH = 80;
+const BTN_HEIGHT = 68;
 
 const Wrapper = styled.div`
   position: relative;
@@ -53,8 +53,8 @@ const Button = styled.button<{ $pressed: PressedType; $vowel: boolean }>`
 const KeyButton = (props: KeyButtonProps): JSX.Element => {
   const { letter, pressFn } = props;
   const [pressed, setPressed] = useState(false);
-  const { lettersCorrect } = useAppStore();
-  const isVowel = VOWELS.includes(letter);
+  const { lettersCorrect, lang } = useAppStore();
+  const isVowel = isVowelChecking(letter, lang);
 
   const keyHandler = () => {
     pressFn();
