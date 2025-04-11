@@ -17,17 +17,19 @@ type useQuestionReturn = {
 
 const useQuestion = (props: UseQuestionProps): useQuestionReturn => {
   const { data } = props;
-  const { pickedCategory, questions } = useAppStore();
+  const { pickedCategory, questions, lang } = useAppStore();
   const [correct, setCorrect] = useState(false);
   const [update, setUpdate] = useState(false);
   const [question, setQuestion] = useState<Question>({
-    hint: "",
-    word: "",
+    en: "",
+    ru: "",
   });
-  const catQuestions = data.find((cat) => cat.category === pickedCategory)!.questions;
+  const catQuestions = data.find(
+    (cat) => cat.category[lang] === pickedCategory
+  )!.questions;
 
   useEffect(() => {
-    const newQuestion = getRandomQuestion(catQuestions, questions);
+    const newQuestion = getRandomQuestion(catQuestions, questions, lang);
     setQuestion(newQuestion);
     setUpdate(false);
   }, [update]);

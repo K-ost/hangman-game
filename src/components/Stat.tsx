@@ -2,6 +2,7 @@ import { JSX } from "react";
 import { useAppStore } from "../store/useAppStore";
 import styled from "styled-components";
 import { SCORE_POINT } from "../constants";
+import { useTranslation } from "react-i18next";
 
 const Table = styled.table`
   border-collapse: collapse;
@@ -22,13 +23,15 @@ const Table = styled.table`
 
 const Stat = (): JSX.Element => {
   const { questions, score } = useAppStore();
+  const { t } = useTranslation();
+
   return (
     <Table>
       <thead>
         <tr>
-          <th>Question</th>
-          <th>Mistakes</th>
-          <th>Scores</th>
+          <th>{t("stat.question")}</th>
+          <th>{t("stat.mistakes")}</th>
+          <th>{t("stat.score")}</th>
         </tr>
       </thead>
       <tbody>
@@ -36,13 +39,13 @@ const Stat = (): JSX.Element => {
           <tr key={index}>
             <td>{question.word}</td>
             <td>{question.mistakes}</td>
-            <td>{question.word.length * SCORE_POINT}</td>
+            <td>-</td>
           </tr>
         ))}
       </tbody>
       <tfoot>
         <tr>
-          <td colSpan={2}>Total score:</td>
+          <td colSpan={2}>{t("stat.total")}:</td>
           <td>{score}</td>
         </tr>
       </tfoot>

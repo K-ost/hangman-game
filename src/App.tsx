@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useAppStore } from "./store/useAppStore";
 import MainScreen from "./screens/Main";
 import CategoriesScreen from "./screens/Categories";
@@ -7,7 +9,12 @@ import OverScreen from "./screens/Over";
 import WinScreen from "./screens/Win";
 
 function App() {
-  const { screen } = useAppStore();
+  const { screen, lang } = useAppStore();
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [i18n, lang]);
 
   return (
     <Layout>

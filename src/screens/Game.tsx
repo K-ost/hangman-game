@@ -7,15 +7,17 @@ import {
   LETTERS,
   MAXIMUM_QUESTIONS,
   VOWELS,
+  LETTERS_RU,
+  VOWELS_RU,
 } from "../constants";
 import Word from "../ui/Word";
-import KeyButton from "../ui/KeyButton";
 import ProgressBar from "../ui/ProgressBar";
 import useQuestion from "../hooks/useQuestion";
-import { KeyboardGrid } from "../components/Keyboard";
+import Keyboard from "../components/Keyboard";
 import Correct from "../components/Correct";
 import { checkCorrectAnswer } from "../utils";
 import data from "../../data.json";
+import { useTranslation } from "react-i18next";
 
 const GameScreen = (): JSX.Element => {
   const {
@@ -27,7 +29,11 @@ const GameScreen = (): JSX.Element => {
     resetWord,
     setQuestions,
     questions,
+    lang,
   } = useAppStore();
+  const { t } = useTranslation();
+
+  const currentKeyboard = lang === "en" ? LETTERS : LETTERS_RU;
 
   const {
     correct,
@@ -38,7 +44,7 @@ const GameScreen = (): JSX.Element => {
   } = useQuestion({ data });
 
   const isCorrectAnswer = useMemo(
-    () => checkCorrectAnswer(currentQuestion, lettersCorrect),
+    () => checkCorrectAnswer(currentQuestion, lettersCorrect, lang),
     [currentQuestion, lettersCorrect]
   );
 
@@ -52,7 +58,7 @@ const GameScreen = (): JSX.Element => {
     if (lettersWrong.length >= ATTEMPTS_NUMBER) {
       setQuestions({
         mistakes: lettersWrong.length,
-        word: currentQuestion.word,
+        word: currentQuestion[lang],
       });
       setScreen("over");
       failureSound.play();
@@ -61,7 +67,7 @@ const GameScreen = (): JSX.Element => {
     if (questions.length === MAXIMUM_QUESTIONS - 1 && isCorrectAnswer) {
       setQuestions({
         mistakes: lettersCorrect.length,
-        word: currentQuestion.word,
+        word: currentQuestion[lang],
       });
       setScreen("win");
       correctSound.play();
@@ -70,8 +76,9 @@ const GameScreen = (): JSX.Element => {
 
   const keyHandler = (char: string) => {
     if (currentQuestion) {
-      const isVowel = VOWELS.includes(char);
-      const isChar = currentQuestion.word.includes(char);
+      const vowelsKeys = lang === "en" ? VOWELS : VOWELS_RU;
+      const isVowel = vowelsKeys.includes(char);
+      const isChar = currentQuestion[lang].includes(char);
       if (isVowel && !isChar) {
         return;
       }
@@ -85,43 +92,28 @@ const GameScreen = (): JSX.Element => {
     resetWord();
     setQuestions({
       mistakes: lettersWrong.length,
-      word: currentQuestion.word,
+      word: currentQuestion[lang],
     });
   };
 
   return (
     <div className="fullWidth">
-      <h2>Category: {pickedCategory}</h2>
+      <h2>{t("screen.game.title", { title: pickedCategory })}</h2>
 
       <p className="text-center">
         Question: {questions.length + 1} / {MAXIMUM_QUESTIONS}
       </p>
 
-      {currentQuestion.hint && <h3>{currentQuestion.hint}</h3>}
-
-      <Word word={currentQuestion.word} />
+      <Word word={currentQuestion[lang]} />
 
       <ProgressBar />
 
       {!correct && (
-        <div>
-          {LETTERS.map((string) => {
-            return (
-              <KeyboardGrid key={string}>
-                {string.split("").map((el) => {
-                  return (
-                    <KeyButton
-                      key={el}
-                      letter={el}
-                      pressFn={() => keyHandler(el)}
-                      word={currentQuestion.word}
-                    />
-                  );
-                })}
-              </KeyboardGrid>
-            );
-          })}
-        </div>
+        <Keyboard
+          currentQuestion={currentQuestion[lang]}
+          keyHandler={keyHandler}
+          currentKeyboard={currentKeyboard}
+        />
       )}
 
       {correct && <Correct handler={goNextHandler} />}
