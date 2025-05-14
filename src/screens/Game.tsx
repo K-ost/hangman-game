@@ -18,6 +18,7 @@ import Correct from "../components/Correct";
 import { checkCorrectAnswer } from "../utils";
 import data from "../../data.json";
 import { useTranslation } from "react-i18next";
+import Title from "../ui/Title";
 
 const GameScreen = (): JSX.Element => {
   const {
@@ -97,12 +98,12 @@ const GameScreen = (): JSX.Element => {
   };
 
   return (
-    <div className="fullWidth">
-      <h2>{t("screen.game.title", { title: pickedCategory })}</h2>
+    <>
+      <Title>{t("screen.game.title", { title: pickedCategory })}</Title>
 
-      <p className="text-center">
+      <div className="text-center mb-8">
         Question: {questions.length + 1} / {MAXIMUM_QUESTIONS}
-      </p>
+      </div>
 
       <Word word={currentQuestion[lang]} />
 
@@ -117,7 +118,7 @@ const GameScreen = (): JSX.Element => {
       )}
 
       {correct && <Correct handler={goNextHandler} />}
-    </div>
+    </>
   );
 };
 

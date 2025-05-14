@@ -2,18 +2,8 @@ import { JSX } from "react";
 import data from "../../data.json";
 import CatButton from "../ui/CatButton";
 import { useAppStore } from "../store/useAppStore";
-import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
-  @media screen and (max-width: 750px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-`;
+import Title from "../ui/Title";
 
 const CategoriesScreen = (): JSX.Element => {
   const { setCategory, setScreen, lang } = useAppStore();
@@ -25,9 +15,9 @@ const CategoriesScreen = (): JSX.Element => {
   };
 
   return (
-    <div className="fullWidth">
-      <h1>{t("screen.cats.title")}</h1>
-      <Grid>
+    <div>
+      <Title>{t("screen.cats.title")}</Title>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
         {data.map((category) => (
           <CatButton
             key={category.id}
@@ -36,7 +26,7 @@ const CategoriesScreen = (): JSX.Element => {
             handler={() => catPicker(category.category[lang])}
           />
         ))}
-      </Grid>
+      </div>
     </div>
   );
 };

@@ -1,31 +1,30 @@
 import { JSX } from "react";
 import { useAppStore } from "../store/useAppStore";
-import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 
-const Table = styled.table`
-  border-collapse: collapse;
-  margin: 40px auto;
-  max-width: 700px;
-  width: 100%;
-  th,
-  td {
-    border: 1px solid var(--color-grey);
-    padding: 8px 16px;
-    text-align: left;
-  }
-  tfoot td {
-    font-weight: 500;
-    font-size: 18px;
-  }
-`;
+// const Table = styled.table`
+//   border-collapse: collapse;
+//   margin: 40px auto;
+//   max-width: 700px;
+//   width: 100%;
+//   th,
+//   td {
+//     border: 1px solid var(--color-grey);
+//     padding: 8px 16px;
+//     text-align: left;
+//   }
+//   tfoot td {
+//     font-weight: 500;
+//     font-size: 18px;
+//   }
+// `;
 
 const Stat = (): JSX.Element => {
   const { questions, score } = useAppStore();
   const { t } = useTranslation();
 
   return (
-    <Table>
+    <table>
       <thead>
         <tr>
           <th>{t("stat.question")}</th>
@@ -48,7 +47,7 @@ const Stat = (): JSX.Element => {
           <td>{score}</td>
         </tr>
       </tfoot>
-    </Table>
+    </table>
   );
 };
 
