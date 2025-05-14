@@ -10,18 +10,6 @@ type KeyButtonProps = {
   word: string;
 };
 
-type PressedType = "correct" | "incorrect" | "default";
-
-// const Button = styled.button<{ $pressed: PressedType; $vowel: boolean }>`
-//   @media screen and (max-width: 750px) {
-//     border-radius: 8px;
-//     width: 32px;
-//     height: 38px;
-//     font-size: 16px;
-//     line-height: 20px;
-//   }
-// `;
-
 const KeyButton = (props: KeyButtonProps): JSX.Element => {
   const { letter, pressFn } = props;
   const [pressed, setPressed] = useState(false);
@@ -29,12 +17,11 @@ const KeyButton = (props: KeyButtonProps): JSX.Element => {
   const isVowel = isVowelChecking(letter, lang);
 
   const iconClass =
-    "block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[70px]";
-  const keyClass = `${
-    isVowel ? "bg-lightgreen" : "bg-white"
-  } rounded-lg text-dark w-[80px] h-[68px] text-4xl flex items-center justify-center cursor-pointer uppercase m-0.5 lg:m-1`;
+    "block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[30px] lg:w-[70px]";
 
-  console.log(keyClass);
+  const keyClass = `${isVowel ? "bg-lightgreen" : "bg-white"}
+  ${pressed ? "cursor-default opacity-15" : "cursor-pointer"}
+  rounded-lg lg:rounded-2xl text-dark w-[32px] lg:w-[80px] h-[38px] lg:h-[68px] text-lg lg:text-4xl flex items-center justify-center  uppercase m-0.5 lg:m-1`;
 
   const keyHandler = () => {
     pressFn();

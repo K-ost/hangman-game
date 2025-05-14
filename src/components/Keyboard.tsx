@@ -12,7 +12,7 @@ const Keyboard = (props: KeyboardProps): JSX.Element => {
   return (
     <div>
       {currentKeyboard.map((string, index) => (
-        <div key={index} className="flex flex-wrap justify-center">
+        <div key={index} className="flex flex-wrap justify-center -mx-4 lg:m-0">
           {string.split("").map((el) => {
             return (
               <KeyButton
