@@ -1,5 +1,4 @@
 import { JSX, useState } from "react";
-import styled from "styled-components";
 import { useAppStore } from "../store/useAppStore";
 import ok from "../assets/check.svg";
 import times from "../assets/times.svg";
@@ -11,50 +10,18 @@ type KeyButtonProps = {
   word: string;
 };
 
-type PressedType = "correct" | "incorrect" | "default";
-
-const BTN_WIDTH = 80;
-const BTN_HEIGHT = 68;
-
-const Wrapper = styled.div`
-  position: relative;
-  img {
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 70px;
-    @media screen and (max-width: 750px) {
-      width: 32px;
-    }
-  }
-`;
-
-const Button = styled.button<{ $pressed: PressedType; $vowel: boolean }>`
-  background: var(--color-${(props) => (props.$vowel ? "lightgreen" : "white")});
-  border-radius: 24px;
-  color: var(--color-dark);
-  width: ${BTN_WIDTH}px;
-  height: ${BTN_HEIGHT}px;
-  font-size: 34px;
-  line-height: 40px;
-  position: relative;
-  text-transform: uppercase;
-  @media screen and (max-width: 750px) {
-    border-radius: 8px;
-    width: 32px;
-    height: 38px;
-    font-size: 16px;
-    line-height: 20px;
-  }
-`;
-
 const KeyButton = (props: KeyButtonProps): JSX.Element => {
   const { letter, pressFn } = props;
   const [pressed, setPressed] = useState(false);
   const { lettersCorrect, lang } = useAppStore();
   const isVowel = isVowelChecking(letter, lang);
+
+  const iconClass =
+    "block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[30px] lg:w-[70px]";
+
+  const keyClass = `${isVowel ? "bg-lightgreen" : "bg-white"}
+  ${pressed ? "cursor-default opacity-15" : "cursor-pointer"}
+  rounded-lg lg:rounded-2xl text-dark w-[32px] lg:w-[80px] h-[38px] lg:h-[68px] text-lg lg:text-4xl flex items-center justify-center  uppercase m-0.5 lg:m-1`;
 
   const keyHandler = () => {
     pressFn();
@@ -62,26 +29,17 @@ const KeyButton = (props: KeyButtonProps): JSX.Element => {
   };
 
   return (
-    <Wrapper>
-      <Button
-        onClick={keyHandler}
-        disabled={pressed}
-        $pressed={
-          pressed
-            ? lettersCorrect.includes(letter)
-              ? "correct"
-              : "incorrect"
-            : "default"
-        }
-        $vowel={isVowel}
-      >
+    <div className="relative">
+      <button onClick={keyHandler} className={keyClass} disabled={pressed}>
         {letter}
-      </Button>
-      {pressed && lettersCorrect.includes(letter) && <img src={ok} alt="" />}
-      {pressed && !lettersCorrect.includes(letter) && !isVowel && (
-        <img src={times} alt="" />
+      </button>
+      {pressed && lettersCorrect.includes(letter) && (
+        <img src={ok} alt="" className={iconClass} />
       )}
-    </Wrapper>
+      {pressed && !lettersCorrect.includes(letter) && !isVowel && (
+        <img src={times} alt="" className={iconClass} />
+      )}
+    </div>
   );
 };
 

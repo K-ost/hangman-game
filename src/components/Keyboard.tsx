@@ -1,5 +1,4 @@
 import { JSX } from "react";
-import styled from "styled-components";
 import KeyButton from "../ui/KeyButton";
 
 type KeyboardProps = {
@@ -8,27 +7,12 @@ type KeyboardProps = {
   currentQuestion: string;
 };
 
-export const KeyboardGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  @media screen and (max-width: 750px) {
-    margin: 0 -10px;
-  }
-  & > div {
-    margin: 3px 5px;
-    @media screen and (max-width: 750px) {
-      margin: 2px;
-    }
-  }
-`;
-
 const Keyboard = (props: KeyboardProps): JSX.Element => {
   const { currentKeyboard, currentQuestion, keyHandler } = props;
   return (
     <div>
       {currentKeyboard.map((string, index) => (
-        <KeyboardGrid key={index}>
+        <div key={index} className="flex flex-wrap justify-center -mx-4 lg:m-0">
           {string.split("").map((el) => {
             return (
               <KeyButton
@@ -39,7 +23,7 @@ const Keyboard = (props: KeyboardProps): JSX.Element => {
               />
             );
           })}
-        </KeyboardGrid>
+        </div>
       ))}
     </div>
   );

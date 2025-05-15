@@ -3,7 +3,7 @@ import NewGameBtn from "../components/NewGameBtn";
 
 const MainScreen = (): JSX.Element => {
   return (
-    <div className="app-center">
+    <div className="text-center">
       <NewGameBtn />
     </div>
   );

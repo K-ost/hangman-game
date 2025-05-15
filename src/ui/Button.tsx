@@ -1,30 +1,12 @@
 import { ComponentPropsWithRef, JSX } from "react";
-import styled from "styled-components";
 
-type BtnVariant = "outlined" | "filled";
-
-type ButtonProps = ComponentPropsWithRef<"button"> & {
-  variant?: BtnVariant;
-};
-
-const Btn = styled.button<{ $variant?: BtnVariant }>`
-  background: var(--color-white);
-  border-radius: 18px;
-  color: var(--color-dark);
-  font-size: 24px;
-  line-height: 32px;
-  padding: 20px 34px;
-  @media screen and (max-width: 750px) {
-    border-radius: 12px;
-    font-size: 20px;
-    line-height: 26px;
-    padding: 12px 18px;
-  }
-`;
-
-const Button = (props: ButtonProps): JSX.Element => {
-  const { variant = "outlined" } = props;
-  return <Btn $variant={variant} {...props} />;
+const Button = (props: ComponentPropsWithRef<"button">): JSX.Element => {
+  return (
+    <button
+      className="bg-white rounded-lg lg:rounded-2xl text-dark text-xl lg:text-3xl py-2 px-8 lg:py-4 lg:px-12 cursor-pointer transition duration-200 ease-in hover:opacity-75"
+      {...props}
+    />
+  );
 };
 
 export default Button;
