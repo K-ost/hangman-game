@@ -9,10 +9,10 @@ type CorrectProps = {
 const Correct = ({ handler }: CorrectProps): JSX.Element => {
   return (
     <div>
-      <h2 className="d-flex justify-content-center align-center">
-        Correct <img src={icon} alt="" style={{ width: 34, marginLeft: 10 }} />
-      </h2>
-      <div className="d-flex justify-content-center">
+      <div className="flex justify-center items-center mb-8 text-2xl">
+        Correct <img src={icon} alt="" className="w-[34px] ml-4" />
+      </div>
+      <div className="flex justify-center">
         <Button onClick={handler}>Go next &rarr;</Button>
       </div>
     </div>
