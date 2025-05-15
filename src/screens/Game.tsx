@@ -2,8 +2,6 @@ import { JSX, useEffect, useMemo } from "react";
 import { useAppStore } from "../store/useAppStore";
 import {
   ATTEMPTS_NUMBER,
-  correctSound,
-  failureSound,
   LETTERS,
   MAXIMUM_QUESTIONS,
   VOWELS,
@@ -62,7 +60,6 @@ const GameScreen = (): JSX.Element => {
         word: currentQuestion[lang],
       });
       setScreen("over");
-      failureSound.play();
     }
 
     if (questions.length === MAXIMUM_QUESTIONS - 1 && isCorrectAnswer) {
@@ -71,7 +68,6 @@ const GameScreen = (): JSX.Element => {
         word: currentQuestion[lang],
       });
       setScreen("win");
-      correctSound.play();
     }
   }, [lettersCorrect, lettersWrong, currentQuestion]);
 
